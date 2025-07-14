@@ -3,9 +3,18 @@
     "title": "Transform Your Surplus Inventory Into Profit",
     "description": "The premier B2B marketplace for CBD, vapes, and alternative health products. Connect with verified traders, liquidate expiring stock, and maximize your wholesale revenue.",
     "stats": [
-      {"number": "$50M+", "label": "Lost annually to waste"},
-      {"number": "$15M+", "label": "Potential savings Year 1"},
-      {"number": "60-80%", "label": "Value recovery rate"}
+      {
+        "number": "$50M+",
+        "label": "Lost annually to waste"
+      },
+      {
+        "number": "$15M+",
+        "label": "Potential savings Year 1"
+      },
+      {
+        "number": "60-80%",
+        "label": "Value recovery rate"
+      }
     ]
   },
   "problem": {
@@ -67,7 +76,7 @@
     ]
   },
   "benefits": {
-    "title": "Why Choose Wellness Marketplace",
+    "title": "Why Choose Wellness Marketplace?",
     "subtitle": "Join the most trusted B2B platform in the wellness industry, backed by proven expertise and industry leaders.",
     "benefits": [
       {
