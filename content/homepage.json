@@ -1,0 +1,128 @@
+{
+  "hero": {
+    "title": "Transform Your Surplus Inventory Into Profit",
+    "description": "The premier B2B marketplace for CBD, vapes, and alternative health products. Connect with verified traders, liquidate expiring stock, and maximize your wholesale revenue.",
+    "stats": [
+      {"number": "$50M+", "label": "Lost annually to waste"},
+      {"number": "$15M+", "label": "Potential savings Year 1"},
+      {"number": "60-80%", "label": "Value recovery rate"}
+    ]
+  },
+  "problem": {
+    "title": "Stop Losing Money on Expiring Inventory",
+    "subtitle": "Millions of dollars in CBD, vape, and wellness products are discarded annually due to approaching expiry dates. We're changing that.",
+    "problems": [
+      "Products approaching expiry dates become unsellable",
+      "Limited channels to liquidate surplus inventory",
+      "Difficulty finding verified wholesale buyers",
+      "Millions lost to discarded out-of-date stock"
+    ],
+    "solutions": [
+      "Dedicated marketplace for wholesale liquidation",
+      "Network of verified CBD/vape retailers and distributors",
+      "One-click integration with existing inventory systems",
+      "Recover 60-80% of value from expiring stock"
+    ]
+  },
+  "features": {
+    "title": "Built for Wholesale Trading",
+    "subtitle": "Professional B2B features designed specifically for the CBD, vape, and alternative health industries.",
+    "features": [
+      {
+        "icon": "📦",
+        "title": "Volume Pricing",
+        "description": "Automatic tiered pricing for pallets, cases, and bulk orders. Show potential margins to help retailers make quick decisions.",
+        "highlights": "• Pallet pricing • Bulk discounts • Margin calculator"
+      },
+      {
+        "icon": "🏦",
+        "title": "Flexible Payments",
+        "description": "ACH bank transfers, NET 30 terms, and offline payment arrangements for established trading relationships.",
+        "highlights": "• ACH transfers • NET 30/60 terms • Offline arrangements"
+      },
+      {
+        "icon": "⏰",
+        "title": "Expiry Management",
+        "description": "Track use-by dates, get alerts for approaching expiry, and automatically adjust pricing for quick liquidation.",
+        "highlights": "• Date tracking • Smart alerts • Auto pricing"
+      },
+      {
+        "icon": "🛡️",
+        "title": "Verified Traders",
+        "description": "Comprehensive business verification, licenses, and compliance tracking. Trade with confidence.",
+        "highlights": "• License verification • Business validation • Compliance tracking"
+      },
+      {
+        "icon": "🔗",
+        "title": "JustSell Integration",
+        "description": "One-click transfer from your JustSell inventory to the marketplace. Seamless workflow for surplus stock.",
+        "highlights": "• One-click transfer • Sync inventory • Auto listings"
+      },
+      {
+        "icon": "📈",
+        "title": "Trading Analytics",
+        "description": "Detailed insights on trading patterns, popular products, and market pricing trends to optimize your strategy.",
+        "highlights": "• Market insights • Pricing trends • Performance metrics"
+      }
+    ]
+  },
+  "benefits": {
+    "title": "Why Choose Wellness Marketplace",
+    "subtitle": "Join the most trusted B2B platform in the wellness industry, backed by proven expertise and industry leaders.",
+    "benefits": [
+      {
+        "icon": "🎯",
+        "title": "Niche Focus Drives Results",
+        "description": "Concentration of CBD, vape, and wellness traders creates a liquid marketplace with active buyers and competitive pricing."
+      },
+      {
+        "icon": "🤝",
+        "title": "Wellness-stores Brand Power",
+        "description": "Leverage years of industry relationships and reputation from Wisconsin's premier wellness distributor."
+      },
+      {
+        "icon": "🚀",
+        "title": "Technical Excellence",
+        "description": "Built by Uptivity's proven ecommerce platform team, already serving successful vape wholesalers across the US."
+      },
+      {
+        "icon": "🌱",
+        "title": "Environmental Impact",
+        "description": "Reduce waste and environmental impact by connecting surplus inventory with retailers who can move it quickly."
+      }
+    ]
+  },
+  "testimonial": {
+    "quote": "We were facing $50K in losses from CBD products approaching expiry. Within 2 weeks on Wellness Marketplace, we liquidated 80% of our surplus inventory at 70% of original value. Game changer.",
+    "author_name": "Mike Greene",
+    "author_title": "CEO, GreenLeaf Distributors",
+    "author_initials": "MG"
+  },
+  "companies": {
+    "title": "Powered by Industry Leaders",
+    "subtitle": "A 50/50 joint venture combining technical expertise with deep industry knowledge and relationships.",
+    "uptivity": {
+      "description": "Multi-product SaaS B2B business specializing in e-commerce platforms. Already powering several vape wholesalers and traders with the JustSell platform.",
+      "features": [
+        "Technical platform development",
+        "AI and automation expertise",
+        "Proven B2B e-commerce track record"
+      ]
+    },
+    "wellness_stores": {
+      "description": "Established wellness and CBD distributor with years of trading experience and deep industry relationships throughout the American market.",
+      "features": [
+        "Extensive industry network",
+        "Years of wellness trading experience",
+        "Trusted brand reputation"
+      ]
+    },
+    "partnership_description": "This joint venture combines Uptivity's cutting-edge technology and automation capabilities with Wellness-stores' deep industry knowledge and established relationships. Together, we're creating the most comprehensive B2B marketplace for the wellness industry, designed to solve real problems and drive measurable results for our partners."
+  },
+  "cta": {
+    "title": "Ready to Stop Wasting Money?",
+    "description": "Join hundreds of wellness businesses already saving millions through smart surplus trading. Your next sale could be just one click away.",
+    "button_text": "Get Started Today",
+    "button_url": "/onboarding-form/"
+  }
+}
