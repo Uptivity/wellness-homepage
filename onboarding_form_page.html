@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Wellness Marketplace - Onboarding Application</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        body {
+            background-color: #f9fafb;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        /* Navigation Styles */
+        .navbar {
+            background: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 50;
+            padding: 1rem 0;
+        }
+        
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            background: linear-gradient(to right, #4F46E5, #7C3AED);
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .logo-text {
+            font-size: 1.25rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-links {
+            display: none;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+            }
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #6b7280;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #4F46E5;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(to right, #4F46E5, #7C3AED);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .btn-primary:hover {
+            box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            border: 2px solid #4F46E5;
+            color: #4F46E5;
+            padding: 0.5rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            background: transparent;
+            cursor: pointer;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .btn-secondary:hover {
+            background: #eef2ff;
+        }
+        
+        /* Main Content Styles */
+        .main-content {
+            margin-top: 6rem;
+            padding: 4rem 0;
+            min-height: 100vh;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 1rem;
+        }
+        
+        .page-subtitle {
+            font-size: 1.25rem;
+            color: #6b7280;
+            max-width: 48rem;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Form Styles */
+        .form-container {
+            background: linear-gradient(135deg, #f9fafb 0%, #e0e7ff 100%);
+            border-radius: 1rem;
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .form-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+        
+        .form-grid.two-cols {
+            grid-template-columns: 1fr;
+        }
+        
+        @media (min-width: 768px) {
+            .form-grid.two-cols {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .form-grid.three-cols {
+            grid-template-columns: 1fr;
+        }
+        
+        @media (min-width: 768px) {
+            .form-grid.three-cols {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-label {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #374151;
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            ring: 2px solid #4F46E5;
+            border-color: #4F46E5;
+        }
+        
+        .checkbox-grid {
+            display: grid;
+            gap: 1rem;
+        }
+        
+        @media (min-width: 768px) {
+            .checkbox-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .checkbox-grid.three-cols {
+            grid-template-columns: 1fr;
+        }
+        
+        @media (min-width: 768px) {
+            .checkbox-grid.three-cols {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .checkbox-item input[type="checkbox"],
+        .checkbox-item input[type="radio"] {
+            width: 1rem;
+            height: 1rem;
+            accent-color: #4F46E5;
+        }
+        
+        .checkbox-label {
+            font-size: 0.875rem;
+            color: #374151;
+            line-height: 1.4;
+        }
+        
+        .form-submit {
+            width: 100%;
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .form-submit:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+        
+        .form-note {
+            text-align: center;
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-top: 1rem;
+        }
+        
+        .success-message {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 0.5rem;
+        }
+        
+        .success-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .success-text {
+            color: #065f46;
+            font-weight: 500;
+        }
+        
+        .success-description {
+            color: #047857;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            background: white;
+            border-top: 1px solid #e5e7eb;
+            padding: 1rem;
+        }
+        
+        .mobile-menu.show {
+            display: block;
+        }
+        
+        @media (min-width: 768px) {
+            .mobile-menu {
+                display: none !important;
+            }
+        }
+        
+        .mobile-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        .mobile-links a {
+            color: #6b7280;
+            text-decoration: none;
+            padding: 0.5rem 0;
+        }
+        
+        .mobile-links a:hover {
+            color: #4F46E5;
+        }
+        
+        .mobile-button {
+            display: block;
+            margin-top: 0.75rem;
+        }
+        
+        .hamburger {
+            display: block;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #6b7280;
+            font-size: 1.5rem;
+        }
+        
+        @media (min-width: 768px) {
+            .hamburger {
+                display: none;
+            }
+        }
+        
+        /* Footer */
+        .footer {
+            background: #111827;
+            color: white;
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-simple {
+            text-align: center;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-description {
+            color: #9ca3af;
+            font-size: 0.875rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-copyright {
+            color: #9ca3af;
+            font-size: 0.875rem;
+            border-top: 1px solid #374151;
+            padding-top: 2rem;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 640px) {
+            .container {
+                padding: 0 0.5rem;
+            }
+            
+            .page-title {
+                font-size: 2rem;
+            }
+            
+            .form-container {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                </div>
+                <span class="logo-text">Wellness Marketplace</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html#features">Features</a>
+                <a href="index.html#benefits">Benefits</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html" class="btn-secondary">Back to Home</a>
+            </div>
+            <button class="hamburger" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="mobile-menu">
+            <div class="mobile-links">
+                <a href="index.html#features">Features</a>
+                <a href="index.html#benefits">Benefits</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html" class="btn-secondary mobile-button">Back to Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">
+                    Join <span class="gradient-text">Wellness Marketplace</span>
+                </h1>
+                <p class="page-subtitle">
+                    Ready to transform your surplus inventory into profit? Complete our onboarding form and our team will get you set up within 24 hours.
+                </p>
+            </div>
+
+            <div class="form-container">
+                <form id="onboarding-form" class="form-grid">
+                    <!-- Business Information -->
+                    <div class="form-grid two-cols">
+                        <div class="form-group">
+                            <label class="form-label">Business Name *</label>
+                            <input type="text" required class="form-input" placeholder="Your Company Name">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Business Type *</label>
+                            <select required class="form-select">
+                                <option value="">Select Business Type</option>
+                                <option value="manufacturer">Manufacturer</option>
+                                <option value="distributor">Distributor</option>
+                                <option value="wholesaler">Wholesaler</option>
+                                <option value="retailer">Retailer</option>
+                                <option value="importer">Importer</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="form-grid two-cols">
+                        <div class="form-group">
+                            <label class="form-label">Contact Name *</label>
+                            <input type="text" required class="form-input" placeholder="Your Full Name">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Title/Position</label>
+                            <input type="text" class="form-input" placeholder="CEO, Sales Manager, etc.">
+                        </div>
+                    </div>
+
+                    <!-- Email and Phone -->
+                    <div class="form-grid two-cols">
+                        <div class="form-group">
+                            <label class="form-label">Business Email *</label>
+                            <input type="email" required class="form-input" placeholder="contact@yourcompany.com">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Phone Number *</label>
+                            <input type="tel" required class="form-input" placeholder="+1 (555) 123-4567">
+                        </div>
+                    </div>
+
+                    <!-- Business Address -->
+                    <div class="form-group">
+                        <label class="form-label">Business Address *</label>
+                        <input type="text" required class="form-input" placeholder="Street Address">
+                    </div>
+
+                    <div class="form-grid three-cols">
+                        <div class="form-group">
+                            <label class="form-label">City *</label>
+                            <input type="text" required class="form-input" placeholder="City">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">State/Province *</label>
+                            <input type="text" required class="form-input" placeholder="State">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">ZIP/Postal Code *</label>
+                            <input type="text" required class="form-input" placeholder="12345">
+                        </div>
+                    </div>
+
+                    <!-- Business Details -->
+                    <div class="form-grid two-cols">
+                        <div class="form-group">
+                            <label class="form-label">Annual Revenue Range</label>
+                            <select class="form-select">
+                                <option value="">Select Revenue Range</option>
+                                <option value="under-100k">Under $100K</option>
+                                <option value="100k-500k">$100K - $500K</option>
+                                <option value="500k-1m">$500K - $1M</option>
+                                <option value="1m-5m">$1M - $5M</option>
+                                <option value="5m-10m">$5M - $10M</option>
+                                <option value="over-10m">Over $10M</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Tax ID/EIN</label>
+                            <input type="text" class="form-input" placeholder="12-3456789">
+                        </div>
+                    </div>
+
+                    <!-- Product Categories -->
+                    <div class="form-group">
+                        <label class="form-label" style="margin-bottom: 0.75rem;">Product Categories (Select all that apply) *</label>
+                        <div class="checkbox-grid three-cols">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="cbd">
+                                <label for="cbd" class="checkbox-label">CBD Products</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="vape">
+                                <label for="vape" class="checkbox-label">Vape Products</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="hemp">
+                                <label for="hemp" class="checkbox-label">Hemp Products</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="delta">
+                                <label for="delta" class="checkbox-label">Delta-8/9 THC</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="smoking">
+                                <label for="smoking" class="checkbox-label">Smoking Accessories</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="alternative">
+                                <label for="alternative" class="checkbox-label">Alternative Health</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Primary Interest -->
+                    <div class="form-group">
+                        <label class="form-label" style="margin-bottom: 0.75rem;">Primary Interest *</label>
+                        <div class="checkbox-grid">
+                            <div class="checkbox-item">
+                                <input type="radio" name="primary_interest" value="selling" id="selling" required>
+                                <label for="selling" class="checkbox-label">Selling surplus/expiring inventory</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="primary_interest" value="buying" id="buying" required>
+                                <label for="buying" class="checkbox-label">Buying discounted wholesale products</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="primary_interest" value="both" id="both" required>
+                                <label for="both" class="checkbox-label">Both buying and selling</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="primary_interest" value="other" id="other" required>
+                                <label for="other" class="checkbox-label">Other</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Current Challenges -->
+                    <div class="form-group">
+                        <label class="form-label">Current Challenges (Optional)</label>
+                        <textarea rows="4" class="form-textarea" placeholder="Tell us about your current challenges with surplus inventory, finding wholesale buyers/sellers, or other marketplace needs..."></textarea>
+                    </div>
+
+                    <!-- Monthly Volume -->
+                    <div class="form-group">
+                        <label class="form-label">Estimated Monthly Volume</label>
+                        <select class="form-select">
+                            <option value="">Select Monthly Volume</option>
+                            <option value="under-10k">Under $10K</option>
+                            <option value="10k-50k">$10K - $50K</option>
+                            <option value="50k-100k">$50K - $100K</option>
+                            <option value="100k-500k">$100K - $500K</option>
+                            <option value="over-500k">Over $500K</option>
+                        </select>
+                    </div>
+
+                    <!-- Licenses -->
+                    <div class="form-group">
+                        <label class="form-label" style="margin-bottom: 0.75rem;">Relevant Licenses/Certifications</label>
+                        <div class="checkbox-grid">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="cannabis">
+                                <label for="cannabis" class="checkbox-label">State Cannabis License</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="fda">
+                                <label for="fda" class="checkbox-label">FDA Registration</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="tobacco">
+                                <label for="tobacco" class="checkbox-label">Tobacco License</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="business">
+                                <label for="business" class="checkbox-label">Business License</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Referral -->
+                    <div class="form-group">
+                        <label class="form-label">How did you hear about us?</label>
+                        <select class="form-select">
+                            <option value="">Select Source</option>
+                            <option value="wellness-stores">Wellness-stores referral</option>
+                            <option value="justsell">JustSell platform</option>
+                            <option value="industry-contact">Industry contact</option>
+                            <option value="trade-show">Trade show</option>
+                            <option value="google">Google search</option>
+                            <option value="social-media">Social media</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <!-- Terms and Submit -->
+                    <div style="border-top: 1px solid #e5e7eb; padding-top: 1.5rem; margin-top: 1rem;">
+                        <div class="checkbox-item" style="align-items: flex-start; margin-bottom: 1.5rem;">
+                            <input type="checkbox" required id="terms" style="margin-top: 0.25rem;">
+                            <label for="terms" class="checkbox-label" style="line-height: 1.6;">
+                                I agree to the <a href="#" style="color: #4F46E5; text-decoration: underline;">Terms of Service</a> and 
+                                <a href="#" style="color: #4F46E5; text-decoration: underline;">Privacy Policy</a>. I understand that my business will be verified before approval and consent to credit and background checks as necessary for platform security.
+                            </label>
+                        </div>
+
+                        <div class="checkbox-item" style="margin-bottom: 1.5rem;">
+                            <input type="checkbox" id="updates">
+                            <label for="updates" class="checkbox-label">
+                                I would like to receive updates about new features, market insights, and trading opportunities.
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn-primary form-submit">
+                            Submit Application
+                        </button>
+
+                        <p class="form-note">
+                            Our team will review your application and get back to you within 24 hours.
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-simple">
+                <div class="footer-logo">
+                    <div class="logo-icon" style="width: 2rem; height: 2rem;">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <span style="font-size: 1.125rem; font-weight: 700;">Wellness Marketplace</span>
+                </div>
+                <p class="footer-description">
+                    Transform your surplus inventory into profit. The premier B2B marketplace for CBD, vape, and alternative health products.
+                </p>
+                <div class="footer-copyright">
+                    © 2025 Wellness Marketplace. A joint venture between Uptivity (UK) and Wellness-stores (USA).
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu.classList.contains('show')) {
+                mobileMenu.classList.remove('show');
+            } else {
+                mobileMenu.classList.add('show');
+            }
+        }
+
+        // Form submission handler
+        document.getElementById('onboarding-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Get checkboxes separately
+            const productCategories = [];
+            const licenses = [];
+            
+            document.querySelectorAll('input[type="checkbox"]:checked').forEach(checkbox => {
+                if (checkbox.parentElement.textContent.includes('CBD Products') ||
+                    checkbox.parentElement.textContent.includes('Vape Products') ||
+                    checkbox.parentElement.textContent.includes('Hemp Products') ||
+                    checkbox.parentElement.textContent.includes('Delta-8/9 THC') ||
+                    checkbox.parentElement.textContent.includes('Smoking Accessories') ||
+                    checkbox.parentElement.textContent.includes('Alternative Health')) {
+                    productCategories.push(checkbox.parentElement.textContent.trim());
+                }
+                
+                if (checkbox.parentElement.textContent.includes('State Cannabis License') ||
+                    checkbox.parentElement.textContent.includes('FDA Registration') ||
+                    checkbox.parentElement.textContent.includes('Tobacco License') ||
+                    checkbox.parentElement.textContent.includes('Business License')) {
+                    licenses.push(checkbox.parentElement.textContent.trim());
+                }
+            });
+            
+            data.productCategories = productCategories;
+            data.licenses = licenses;
+            
+            // Show success message
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent;
+            
+            submitButton.textContent = 'Submitting...';
+            submitButton.disabled = true;
+            
+            // Simulate form submission
+            setTimeout(() => {
+                submitButton.textContent = '✓ Application Submitted!';
+                submitButton.classList.remove('btn-primary');
+                submitButton.style.background = 'linear-gradient(to right, #10B981, #059669)';
+                
+                // Show success message
+                const successDiv = document.createElement('div');
+                successDiv.className = 'success-message';
+                successDiv.innerHTML = `
+                    <div class="success-header">
+                        <i class="fas fa-check-circle" style="color: #10B981;"></i>
+                        <span class="success-text">Application submitted successfully!</span>
+                    </div>
+                    <p class="success-description">
+                        Thank you for your interest in Wellness Marketplace. Our team will review your application and contact you within 24 hours.
+                    </p>
+                `;
+                this.appendChild(successDiv);
+                
+                // Reset form after 5 seconds
+                setTimeout(() => {
+                    this.reset();
+                    submitButton.textContent = originalText;
+                    submitButton.disabled = false;
+                    submitButton.classList.add('btn-primary');
+                    submitButton.style.background = '';
+                    successDiv.remove();
+                }, 5000);
+            }, 1000);
+            
+            console.log('Form submitted with data:', data);
+        });
+    </script>
+</body>
+</html>

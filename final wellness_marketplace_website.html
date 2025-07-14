@@ -1,0 +1,1781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellness Marketplace - B2B Trading Platform for CBD, Vapes & Alternative Health</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        body {
+            background-color: #f9fafb;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .container-xl {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .flex {
+            display: flex;
+        }
+        
+        .items-center {
+            align-items: center;
+        }
+        
+        .justify-between {
+            justify-content: space-between;
+        }
+        
+        .justify-center {
+            justify-content: center;
+        }
+        
+        .space-x-3 > * + * {
+            margin-left: 0.75rem;
+        }
+        
+        .space-x-4 > * + * {
+            margin-left: 1rem;
+        }
+        
+        .space-x-6 > * + * {
+            margin-left: 1.5rem;
+        }
+        
+        .space-x-8 > * + * {
+            margin-left: 2rem;
+        }
+        
+        .space-y-4 > * + * {
+            margin-top: 1rem;
+        }
+        
+        .space-y-6 > * + * {
+            margin-top: 1.5rem;
+        }
+        
+        .grid {
+            display: grid;
+        }
+        
+        .grid-cols-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .grid-cols-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        
+        .gap-6 {
+            gap: 1.5rem;
+        }
+        
+        .gap-8 {
+            gap: 2rem;
+        }
+        
+        .gap-12 {
+            gap: 3rem;
+        }
+        
+        .gap-16 {
+            gap: 4rem;
+        }
+        
+        /* Navigation Styles */
+        .navbar {
+            background: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 50;
+            padding: 1rem 0;
+        }
+        
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .logo-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            background: linear-gradient(to right, #4F46E5, #7C3AED);
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .logo-text {
+            font-size: 1.25rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-links {
+            display: none;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+            }
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #6b7280;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #4F46E5;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(to right, #4F46E5, #7C3AED);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .btn-primary:hover {
+            box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            border: 2px solid #4F46E5;
+            color: #4F46E5;
+            padding: 0.5rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            background: transparent;
+            cursor: pointer;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .btn-secondary:hover {
+            background: #eef2ff;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 25%, #c7d2fe 75%, #a5b4fc 100%);
+            padding: 8rem 0 4rem;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        @media (min-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #111827;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+        
+        @media (min-width: 1024px) {
+            .hero h1 {
+                font-size: 3.75rem;
+            }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: #6b7280;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 1.875rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: all 0.5s ease;
+        }
+        
+        .stat-label {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        @media (min-width: 640px) {
+            .hero-buttons {
+                flex-direction: row;
+            }
+        }
+        
+        .hero-buttons .btn-primary,
+        .hero-buttons .btn-secondary {
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+        }
+        
+        /* Trading Activity Card */
+        .trading-card {
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            padding: 1.5rem;
+            transform: rotate(3deg);
+            animation: float 6s ease-in-out infinite;
+            position: relative;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: rotate(3deg) translateY(0px); }
+            50% { transform: rotate(3deg) translateY(-20px); }
+        }
+        
+        .trading-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+        
+        .trading-icon {
+            width: 2rem;
+            height: 2rem;
+            background: #10b981;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.875rem;
+        }
+        
+        .trading-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem;
+            background: #f9fafb;
+            border-radius: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .trading-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .trading-product {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        
+        .trading-price {
+            font-weight: 600;
+            color: #10b981;
+        }
+        
+        /* Section Styles */
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section-white {
+            background: white;
+        }
+        
+        .section-gray {
+            background: linear-gradient(135deg, #f9fafb 0%, #e0e7ff 100%);
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #111827;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: #6b7280;
+            text-align: center;
+            max-width: 48rem;
+            margin: 0 auto 4rem;
+            line-height: 1.6;
+        }
+        
+        /* Problem/Solution Cards */
+        .problem-card {
+            background: #fef2f2;
+            border-left: 4px solid #ef4444;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .solution-card {
+            background: #f0fdf4;
+            border-left: 4px solid #10b981;
+            padding: 1.5rem;
+        }
+        
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .problem-card .card-title {
+            color: #991b1b;
+        }
+        
+        .solution-card .card-title {
+            color: #065f46;
+        }
+        
+        .card-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .card-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            color: #374151;
+        }
+        
+        .problem-card .card-list li {
+            color: #991b1b;
+        }
+        
+        .solution-card .card-list li {
+            color: #065f46;
+        }
+        
+        /* Feature Cards */
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        
+        @media (min-width: 768px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.1);
+        }
+        
+        .feature-icon {
+            width: 3rem;
+            height: 3rem;
+            background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 0.75rem;
+        }
+        
+        .feature-description {
+            color: #6b7280;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .feature-highlights {
+            font-size: 0.875rem;
+            color: #4F46E5;
+            font-weight: 500;
+        }
+        
+        /* Benefits Section */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        @media (min-width: 1024px) {
+            .benefits-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .benefit-icon {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 0.25rem;
+        }
+        
+        .benefit-icon.indigo {
+            background: #e0e7ff;
+            color: #4F46E5;
+        }
+        
+        .benefit-icon.green {
+            background: #d1fae5;
+            color: #10b981;
+        }
+        
+        .benefit-icon.purple {
+            background: #e9d5ff;
+            color: #7c3aed;
+        }
+        
+        .benefit-icon.yellow {
+            background: #fef3c7;
+            color: #f59e0b;
+        }
+        
+        .benefit-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 0.5rem;
+        }
+        
+        .benefit-description {
+            color: #6b7280;
+            line-height: 1.6;
+        }
+        
+        /* Testimonial Card */
+        .testimonial-card {
+            background: linear-gradient(135deg, #eef2ff 0%, #f3e8ff 100%);
+            border-radius: 1rem;
+            padding: 2rem;
+        }
+        
+        .testimonial-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 1.5rem;
+        }
+        
+        .testimonial-quote {
+            color: #374151;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .author-avatar {
+            width: 3rem;
+            height: 3rem;
+            background: linear-gradient(to right, #4F46E5, #7C3AED);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .author-name {
+            font-weight: 600;
+            color: #111827;
+        }
+        
+        .author-title {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        
+        /* Company Cards */
+        .company-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        
+        @media (min-width: 1024px) {
+            .company-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .company-card {
+            background: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+        }
+        
+        .company-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .company-icon {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.25rem;
+        }
+        
+        .company-icon.blue {
+            background: linear-gradient(to right, #3b82f6, #4F46E5);
+        }
+        
+        .company-icon.green {
+            background: linear-gradient(to right, #10b981, #059669);
+        }
+        
+        .company-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #111827;
+        }
+        
+        .company-location {
+            color: #6b7280;
+        }
+        
+        .company-description {
+            color: #374151;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .company-features {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .company-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        
+        .company-features .fa-check {
+            color: #10b981;
+        }
+        
+        /* Partnership Section */
+        .partnership-card {
+            background: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            max-width: 64rem;
+            margin: 0 auto;
+        }
+        
+        .partnership-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 1rem;
+        }
+        
+        .partnership-description {
+            color: #374151;
+            line-height: 1.6;
+        }
+        
+        /* Form Styles */
+        .form-container {
+            background: linear-gradient(135deg, #f9fafb 0%, #e0e7ff 100%);
+            border-radius: 1rem;
+            padding: 2rem;
+        }
+        
+        .form-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+        
+        .form-grid.two-cols {
+            grid-template-columns: 1fr;
+        }
+        
+        @media (min-width: 768px) {
+            .form-grid.two-cols {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .form-grid.three-cols {
+            grid-template-columns: 1fr;
+        }
+        
+        @media (min-width: 768px) {
+            .form-grid.three-cols {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-label {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #374151;
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            ring: 2px solid #4F46E5;
+            border-color: #4F46E5;
+        }
+        
+        .checkbox-grid {
+            display: grid;
+            gap: 1rem;
+        }
+        
+        @media (min-width: 768px) {
+            .checkbox-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .checkbox-grid.three-cols {
+            grid-template-columns: 1fr;
+        }
+        
+        @media (min-width: 768px) {
+            .checkbox-grid.three-cols {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .checkbox-item input[type="checkbox"],
+        .checkbox-item input[type="radio"] {
+            width: 1rem;
+            height: 1rem;
+            accent-color: #4F46E5;
+        }
+        
+        .checkbox-label {
+            font-size: 0.875rem;
+            color: #374151;
+            line-height: 1.4;
+        }
+        
+        .form-submit {
+            width: 100%;
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .form-submit:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+        
+        .form-note {
+            text-align: center;
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-top: 1rem;
+        }
+        
+        .success-message {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 0.5rem;
+        }
+        
+        .success-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .success-text {
+            color: #065f46;
+            font-weight: 500;
+        }
+        
+        .success-description {
+            color: #047857;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 0;
+            background: linear-gradient(to right, #4F46E5, #7C3AED);
+        }
+        
+        .cta-container {
+            max-width: 64rem;
+            margin: 0 auto;
+            padding: 0 1rem;
+            text-align: center;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-description {
+            font-size: 1.25rem;
+            color: #c7d2fe;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            justify-content: center;
+        }
+        
+        @media (min-width: 640px) {
+            .cta-buttons {
+                flex-direction: row;
+            }
+        }
+        
+        .btn-white {
+            background: white;
+            color: #4F46E5;
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .btn-white:hover {
+            background: #f9fafb;
+            transform: scale(1.05);
+        }
+        
+        .btn-outline {
+            border: 2px solid white;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            background: transparent;
+            cursor: pointer;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: #4F46E5;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #111827;
+            color: white;
+            padding: 4rem 0;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        .footer-brand {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-description {
+            color: #9ca3af;
+            font-size: 0.875rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .footer-social a {
+            color: #9ca3af;
+            transition: color 0.3s;
+        }
+        
+        .footer-social a:hover {
+            color: white;
+        }
+        
+        .footer-title {
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            text-align: center;
+        }
+        
+        .footer-bottom-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        @media (min-width: 768px) {
+            .footer-bottom-content {
+                flex-direction: row;
+            }
+        }
+        
+        .footer-copyright {
+            color: #9ca3af;
+            font-size: 0.875rem;
+        }
+        
+        .footer-offices {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: #9ca3af;
+        }
+        
+        @media (min-width: 768px) {
+            .footer-offices {
+                flex-direction: row;
+                gap: 1.5rem;
+            }
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            background: white;
+            border-top: 1px solid #e5e7eb;
+            padding: 1rem;
+        }
+        
+        .mobile-menu.show {
+            display: block;
+        }
+        
+        @media (min-width: 768px) {
+            .mobile-menu {
+                display: none !important;
+            }
+        }
+        
+        .mobile-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        .mobile-links a {
+            color: #6b7280;
+            text-decoration: none;
+            padding: 0.5rem 0;
+        }
+        
+        .mobile-links a:hover {
+            color: #4F46E5;
+        }
+        
+        .mobile-button {
+            display: block;
+            margin-top: 0.75rem;
+        }
+        
+        .hamburger {
+            display: block;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #6b7280;
+            font-size: 1.5rem;
+        }
+        
+        @media (min-width: 768px) {
+            .hamburger {
+                display: none;
+            }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 640px) {
+            .container, .container-xl {
+                padding: 0 0.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .trading-card {
+                transform: rotate(0deg);
+            }
+            
+            @keyframes float {
+                0%, 100% { transform: rotate(0deg) translateY(0px); }
+                50% { transform: rotate(0deg) translateY(-10px); }
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                </div>
+                <span class="logo-text">Wellness Marketplace</span>
+            </div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#benefits">Benefits</a>
+                <a href="#about">About</a>
+                <a href="#onboarding" class="btn-primary">Get Started</a>
+            </div>
+            <button class="hamburger" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="mobile-menu">
+            <div class="mobile-links">
+                <a href="#features">Features</a>
+                <a href="#benefits">Benefits</a>
+                <a href="#about">About</a>
+                <a href="#onboarding" class="btn-primary mobile-button">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container-xl">
+            <div class="hero-content">
+                <div>
+                    <h1>
+                        Transform Your <span class="gradient-text">Surplus Inventory</span> Into Profit
+                    </h1>
+                    <p>
+                        The premier B2B marketplace for CBD, vapes, and alternative health products. Connect with verified traders, liquidate expiring stock, and maximize your wholesale revenue.
+                    </p>
+                    
+                    <!-- Key Stats -->
+                    <div class="stats-grid">
+                        <div class="stat">
+                            <div class="stat-number stats-counter">$50M+</div>
+                            <div class="stat-label">Lost annually to waste</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number stats-counter">$15M+</div>
+                            <div class="stat-label">Potential savings Year 1</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number stats-counter">60-80%</div>
+                            <div class="stat-label">Value recovery rate</div>
+                        </div>
+                    </div>
+
+                    <div class="hero-buttons">
+                        <a href="#onboarding" class="btn-primary">
+                            Start Trading Now
+                        </a>
+                        <a href="#features" class="btn-secondary">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                
+                <div style="position: relative;">
+                    <div class="trading-card">
+                        <div class="trading-header">
+                            <div class="trading-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <span style="font-weight: 600; color: #111827;">Live Trading Activity</span>
+                        </div>
+                        <div>
+                            <div class="trading-item">
+                                <span class="trading-product">CBD Tinctures (50ml)</span>
+                                <span class="trading-price">+$2,400</span>
+                            </div>
+                            <div class="trading-item">
+                                <span class="trading-product">Vape Cartridges (Pallet)</span>
+                                <span class="trading-price">+$8,900</span>
+                            </div>
+                            <div class="trading-item">
+                                <span class="trading-product">Hemp Gummies (Bulk)</span>
+                                <span class="trading-price">+$1,200</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem & Solution -->
+    <section class="section section-white">
+        <div class="container-xl">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 class="section-title">Stop Losing Money on Expiring Inventory</h2>
+                <p class="section-subtitle">
+                    Millions of dollars in CBD, vape, and wellness products are discarded annually due to approaching expiry dates. We're changing that.
+                </p>
+            </div>
+
+            <!-- Content Image Placeholder 1 -->
+            <div class="content-image">
+                <div class="content-image-label">CMS Upload Area</div>
+                Add image of expired CBD/vape products or warehouse waste statistics
+            </div>
+
+            <div class="problem-solution-grid">
+                <div>
+                    <div class="problem-card">
+                        <h3 class="card-title">The Problem</h3>
+                        <ul class="card-list">
+                            <li>
+                                <i class="fas fa-times-circle"></i>
+                                <span>Products approaching expiry dates become unsellable</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-times-circle"></i>
+                                <span>Limited channels to liquidate surplus inventory</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-times-circle"></i>
+                                <span>Difficulty finding verified wholesale buyers</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-times-circle"></i>
+                                <span>Millions lost to discarded out-of-date stock</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="solution-card">
+                        <h3 class="card-title">Our Solution</h3>
+                        <ul class="card-list">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Dedicated marketplace for wholesale liquidation</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Network of verified CBD/vape retailers and distributors</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>One-click integration with existing inventory systems</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Recover 60-80% of value from expiring stock</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section section-gray">
+        <div class="container-xl">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 class="section-title">Built for Wholesale Trading</h2>
+                <p class="section-subtitle">
+                    Professional B2B features designed specifically for the CBD, vape, and alternative health industries.
+                </p>
+            </div>
+
+            <!-- Content Image Placeholder 2 -->
+            <div class="content-image">
+                <div class="content-image-label">CMS Upload Area</div>
+                Add image of B2B marketplace interface or wholesale trading dashboard
+            </div>
+
+            <div class="features-grid">
+                <!-- Volume Pricing -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-layer-group" style="font-size: 1.5rem;"></i>
+                    </div>
+                    <h3 class="feature-title">Volume Pricing</h3>
+                    <p class="feature-description">Automatic tiered pricing for pallets, cases, and bulk orders. Show potential margins to help retailers make quick decisions.</p>
+                    <div class="feature-highlights">• Pallet pricing • Bulk discounts • Margin calculator</div>
+                </div>
+
+                <!-- ACH Payments -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-university" style="font-size: 1.5rem;"></i>
+                    </div>
+                    <h3 class="feature-title">Flexible Payments</h3>
+                    <p class="feature-description">ACH bank transfers, NET 30 terms, and offline payment arrangements for established trading relationships.</p>
+                    <div class="feature-highlights">• ACH transfers • NET 30/60 terms • Offline arrangements</div>
+                </div>
+
+                <!-- Expiry Tracking -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-hourglass-half" style="font-size: 1.5rem;"></i>
+                    </div>
+                    <h3 class="feature-title">Expiry Management</h3>
+                    <p class="feature-description">Track use-by dates, get alerts for approaching expiry, and automatically adjust pricing for quick liquidation.</p>
+                    <div class="feature-highlights">• Date tracking • Smart alerts • Auto pricing</div>
+                </div>
+
+                <!-- Business Verification -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-certificate" style="font-size: 1.5rem;"></i>
+                    </div>
+                    <h3 class="feature-title">Verified Traders</h3>
+                    <p class="feature-description">Comprehensive business verification, licenses, and compliance tracking. Trade with confidence.</p>
+                    <div class="feature-highlights">• License verification • Business validation • Compliance tracking</div>
+                </div>
+
+                <!-- Integration -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-link" style="font-size: 1.5rem;"></i>
+                    </div>
+                    <h3 class="feature-title">JustSell Integration</h3>
+                    <p class="feature-description">One-click transfer from your JustSell inventory to the marketplace. Seamless workflow for surplus stock.</p>
+                    <div class="feature-highlights">• One-click transfer • Sync inventory • Auto listings</div>
+                </div>
+
+                <!-- Analytics -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line" style="font-size: 1.5rem;"></i>
+                    </div>
+                    <h3 class="feature-title">Trading Analytics</h3>
+                    <p class="feature-description">Detailed insights on trading patterns, popular products, and market pricing trends to optimize your strategy.</p>
+                    <div class="feature-highlights">• Market insights • Pricing trends • Performance metrics</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="section section-white">
+        <div class="container-xl">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 class="section-title">Why Choose Wellness Marketplace</h2>
+                <p class="section-subtitle">
+                    Join the most trusted B2B platform in the wellness industry, backed by proven expertise and industry leaders.
+                </p>
+            </div>
+
+            <div class="benefits-grid">
+                <div style="display: flex; flex-direction: column; gap: 2rem;">
+                    <div class="benefit-item">
+                        <div class="benefit-icon indigo">
+                            <i class="fas fa-crosshairs" style="font-size: 1rem;"></i>
+                        </div>
+                        <div>
+                            <h3 class="benefit-title">Niche Focus Drives Results</h3>
+                            <p class="benefit-description">Concentration of CBD, vape, and wellness traders creates a liquid marketplace with active buyers and competitive pricing.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon green">
+                            <i class="fas fa-handshake" style="font-size: 1rem;"></i>
+                        </div>
+                        <div>
+                            <h3 class="benefit-title">Wellness-stores Brand Power</h3>
+                            <p class="benefit-description">Leverage years of industry relationships and reputation from Wisconsin's premier wellness distributor.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon purple">
+                            <i class="fas fa-rocket" style="font-size: 1rem;"></i>
+                        </div>
+                        <div>
+                            <h3 class="benefit-title">Technical Excellence</h3>
+                            <p class="benefit-description">Built by Uptivity's proven ecommerce platform team, already serving successful vape wholesalers across the US.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon yellow">
+                            <i class="fas fa-leaf" style="font-size: 1rem;"></i>
+                        </div>
+                        <div>
+                            <h3 class="benefit-title">Environmental Impact</h3>
+                            <p class="benefit-description">Reduce waste and environmental impact by connecting surplus inventory with retailers who can move it quickly.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <h3 class="testimonial-title">Success Story</h3>
+                    <blockquote class="testimonial-quote">
+                        "We were facing $50K in losses from CBD products approaching expiry. Within 2 weeks on Wellness Marketplace, we liquidated 80% of our surplus inventory at 70% of original value. Game changer."
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <span>MG</span>
+                        </div>
+                        <div>
+                            <div class="author-name">Mike Greene</div>
+                            <div class="author-title">CEO, GreenLeaf Distributors</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section section-gray">
+        <div class="container-xl">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 class="section-title">Powered by Industry Leaders</h2>
+                <p class="section-subtitle">
+                    A 50/50 joint venture combining technical expertise with deep industry knowledge and relationships.
+                </p>
+            </div>
+
+            <!-- Content Image Placeholder 3 -->
+            <div class="content-image">
+                🤝 CMS: Add image of partnership handshake or joint venture visualization
+            </div>
+
+            <div class="company-grid">
+                <!-- Uptivity -->
+                <div class="company-card">
+                    <div class="company-header">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjgwIiB2aWV3Qm94PSIwIDAgMjAwIDgwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8IS0tIFVwdGl2aXR5IExvZ28gUGxhY2Vob2xkZXIgLS0+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iODAiIGZpbGw9IiNmOWZhZmIiLz4KPHR5cGUKPHRleHQgeD0iMTAwIiB5PSI0NSIgZm9udC1mYW1pbHk9IkludGVyIiBmb250LXNpemU9IjE0IiBmaWxsPSIjMWE5MmY4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5VcHRpdml0eSBMb2dvPC90ZXh0Pgo8L3N2Zz4K" alt="Uptivity Logo" class="company-logo uptivity-logo">
+                        <div>
+                            <h3 class="company-name">Uptivity</h3>
+                            <p class="company-location">United Kingdom</p>
+                        </div>
+                    </div>
+                    <p class="company-description">
+                        Multi-product SaaS B2B business specializing in e-commerce platforms. Already powering several vape wholesalers and traders with the JustSell platform.
+                    </p>
+                    <ul class="company-features">
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Technical platform development</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>AI and automation expertise</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Proven B2B e-commerce track record</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Wellness-stores -->
+                <div class="company-card">
+                    <div class="company-header">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjgwIiB2aWV3Qm94PSIwIDAgMjAwIDgwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8IS0tIFdlbGxuZXNzLXN0b3JlcyBMb2dvIFBsYWNlaG9sZGVyIC0tPgo8cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjZjlmYWZiIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iNDUiIGZvbnQtZmFtaWx5PSJJbnRlciIgZm9udC1zaXplPSIxNCIgZmlsbD0iI2E4NTVmNyIgdGV4dC1hbmNob3I9Im1pZGRsZSI+V2VsbG5lc3Mtc3RvcmVzIExvZ288L3RleHQ+Cjwvc3ZnPgo=" alt="Wellness-stores Logo" class="company-logo wellness-logo">
+                        <div>
+                            <h3 class="company-name">Wellness-stores</h3>
+                            <p class="company-location">Wisconsin, USA</p>
+                        </div>
+                    </div>
+                    <p class="company-description">
+                        Established wellness and CBD distributor with years of trading experience and deep industry relationships throughout the American market.
+                    </p>
+                    <ul class="company-features">
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Extensive industry network</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Years of wellness trading experience</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Trusted brand reputation</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem;">
+                <div class="partnership-card">
+                    <h3 class="partnership-title">Perfect Partnership</h3>
+                    <p class="partnership-description">
+                        This joint venture combines Uptivity's cutting-edge technology and automation capabilities with Wellness-stores' deep industry knowledge and established relationships. Together, we're creating the most comprehensive B2B marketplace for the wellness industry, designed to solve real problems and drive measurable results for our partners.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Onboarding Call-to-Action Section -->
+    <section id="onboarding" class="section section-white">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2 class="section-title">Join Wellness Marketplace</h2>
+                <p class="section-subtitle">
+                    Ready to transform your surplus inventory into profit? Complete our onboarding process and our team will get you set up within 24 hours.
+                </p>
+            </div>
+
+            <div style="text-align: center; background: linear-gradient(135deg, #f9fafb 0%, #e0e7ff 50%, #ddd6fe 100%); border-radius: 1rem; padding: 3rem; max-width: 600px; margin: 0 auto;">
+                <div style="margin-bottom: 2rem;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #4F46E5 0%, #A855F7 50%, #7C3AED 100%); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-clipboard-list" style="color: white; font-size: 2rem;"></i>
+                    </div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; color: #111827; margin-bottom: 1rem;">Start Your Application</h3>
+                    <p style="color: #6b7280; margin-bottom: 2rem;">
+                        Tell us about your business, trading needs, and how we can help you maximize your inventory value. Our comprehensive form takes just 5 minutes to complete.
+                    </p>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 1rem; align-items: center;">
+                    <a href="onboarding-form.html" class="btn-primary" style="padding: 1rem 2rem; border-radius: 0.75rem; font-weight: 600; text-decoration: none; display: inline-block;">
+                        Complete Application Form
+                    </a>
+                    <p style="font-size: 0.875rem; color: #6b7280;">
+                        ⏱️ Takes 5 minutes • 📞 24-hour response time • 🔒 Fully secure
+                    </p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <p style="color: #6b7280; font-size: 0.875rem;">
+                    Questions? Email us at <a href="mailto:onboarding@wellnessmarketplace.com" style="color: #4F46E5; text-decoration: underline;">onboarding@wellnessmarketplace.com</a> 
+                    or call <a href="tel:+1-555-WELLNESS" style="color: #4F46E5; text-decoration: underline;">+1 (555) WELLNESS</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20" style="background: linear-gradient(to right, #4F46E5, #7C3AED);">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold text-white mb-6">Ready to Stop Wasting Money?</h2>
+            <p class="text-xl text-indigo-100 mb-8 leading-relaxed">
+                Join hundreds of wellness businesses already saving millions through smart surplus trading. 
+                Your next sale could be just one click away.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <a href="#onboarding" class="bg-white text-indigo-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-50 transition-all transform hover:scale-105">
+                    Get Started Today
+                </a>
+                <a href="mailto:info@wellnessmarketplace.com" class="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-indigo-600 transition-all">
+                    Contact Sales
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container-xl">
+            <div class="footer-grid">
+                <!-- Company Info -->
+                <div>
+                    <div class="footer-brand">
+                        <div style="display: flex; align-items: center; gap: 0.75rem;">
+                            <div class="logo-icon" style="width: 2rem; height: 2rem;">
+                                <i class="fas fa-shopping-bag"></i>
+                            </div>
+                            <span style="font-size: 1.125rem; font-weight: 700;">Wellness Marketplace</span>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        The premier B2B marketplace for CBD, vape, and alternative health products. Transform surplus inventory into profit.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="footer-title">Platform</h3>
+                    <ul class="footer-links">
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#benefits">Benefits</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#demo">Demo</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h3 class="footer-title">Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#help">Help Center</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#documentation">Documentation</a></li>
+                        <li><a href="#status">System Status</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal -->
+                <div>
+                    <h3 class="footer-title">Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#compliance">Compliance</a></li>
+                        <li><a href="#security">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="footer-copyright">
+                        © 2025 Wellness Marketplace. A joint venture between Uptivity (UK) and Wellness-stores (USA).
+                    </p>
+                    <div class="footer-offices">
+                        <span>🇺🇸 USA Office: Wisconsin</span>
+                        <span>🇬🇧 UK Office: Newcastle upon Tyne</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu.classList.contains('show')) {
+                mobileMenu.classList.remove('show');
+            } else {
+                mobileMenu.classList.add('show');
+            }
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animate stats counters when in view
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('.stats-counter');
+                    counters.forEach(counter => {
+                        counter.style.transform = 'scale(1.1)';
+                        setTimeout(() => {
+                            counter.style.transform = 'scale(1)';
+                        }, 200);
+                    });
+                }
+            });
+        }, observerOptions);
+
+        // Observe the hero section for stats animation
+        const heroSection = document.querySelector('.hero');
+        if (heroSection) {
+            observer.observe(heroSection);
+        }
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+                nav.style.backdropFilter = 'blur(10px)';
+            } else {
+                nav.style.background = 'white';
+                nav.style.backdropFilter = 'none';
+            }
+        });
+
+        console.log('Wellness Marketplace website loaded successfully!');
+        console.log('🎨 Website features Wellness-stores brand colors');
+        console.log('📝 CMS integration ready for content management');
+        console.log('🖼️ Image placeholders ready for content upload');
+    </script>
+
+    <!-- CMS Integration Comments -->
+    <!-- 
+    CONTENT MANAGEMENT SYSTEM SETUP:
+    
+    1. RECOMMENDED CMS OPTIONS:
+       - Netlify CMS (Decap CMS): Free, git-based, perfect for static sites
+       - Forestry: User-friendly, great for non-technical users
+       - Sanity: Powerful headless CMS with real-time collaboration
+       - Simple JSON approach: For basic content updates
+    
+    2. CONTENT AREAS TO MANAGE:
+       - Hero section text and statistics
+       - Feature cards (6 tiles) text and icons
+       - Benefits section (4 tiles) text and icons
+       - Company descriptions (Uptivity & Wellness-stores)
+       - Image uploads (3 placeholder areas marked)
+       - Contact information and links
+    
+    3. IMAGE PLACEHOLDERS READY FOR:
+       - 📊 Expired inventory/waste statistics visualization
+       - 🏢 B2B marketplace interface screenshot
+       - 🤝 Partnership or handshake imagery
+    
+    4. LOGO INTEGRATION:
+       - Wellness-stores logo: Purple/lavender branding incorporated
+       - Uptivity logo: Ready for integration in About section
+       - Current placeholders can be replaced via CMS
+    
+    5. FORM SEPARATION:
+       - Main form moved to separate page: onboarding-form.html
+       - Current page has call-to-action button linking to form
+       - Allows better tracking and analytics for conversions
+    -->
+
+</body>
+</html>
