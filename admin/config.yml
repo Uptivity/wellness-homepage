@@ -1,0 +1,125 @@
+backend:
+  name: git-gateway
+  branch: main # Change to master if your default branch is master
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Homepage"
+        name: "homepage"
+        file: "content/homepage.json"
+        fields:
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Main Title", name: "title", widget: "string", default: "Transform Your Surplus Inventory Into Profit"}
+              - {label: "Description", name: "description", widget: "text", default: "The premier B2B marketplace for CBD, vapes, and alternative health products."}
+              - label: "Statistics"
+                name: "stats"
+                widget: "list"
+                fields:
+                  - {label: "Number", name: "number", widget: "string"}
+                  - {label: "Label", name: "label", widget: "string"}
+          
+          - label: "Problem Section"
+            name: "problem"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string", default: "Stop Losing Money on Expiring Inventory"}
+              - {label: "Subtitle", name: "subtitle", widget: "text"}
+              - label: "Problems"
+                name: "problems"
+                widget: "list"
+                field: {label: "Problem", name: "problem", widget: "string"}
+              - label: "Solutions"
+                name: "solutions"
+                widget: "list"
+                field: {label: "Solution", name: "solution", widget: "string"}
+          
+          - label: "Features Section"
+            name: "features"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string", default: "Built for Wholesale Trading"}
+              - {label: "Subtitle", name: "subtitle", widget: "text"}
+              - label: "Features"
+                name: "features"
+                widget: "list"
+                fields:
+                  - {label: "Icon", name: "icon", widget: "string", hint: "Emoji or icon name"}
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Description", name: "description", widget: "text"}
+                  - {label: "Highlights", name: "highlights", widget: "string", hint: "Bullet points separated by •"}
+          
+          - label: "Benefits Section"
+            name: "benefits"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string", default: "Why Choose Wellness Marketplace"}
+              - {label: "Subtitle", name: "subtitle", widget: "text"}
+              - label: "Benefits"
+                name: "benefits"
+                widget: "list"
+                fields:
+                  - {label: "Icon", name: "icon", widget: "string"}
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Description", name: "description", widget: "text"}
+          
+          - label: "Testimonial"
+            name: "testimonial"
+            widget: "object"
+            fields:
+              - {label: "Quote", name: "quote", widget: "text"}
+              - {label: "Author Name", name: "author_name", widget: "string"}
+              - {label: "Author Title", name: "author_title", widget: "string"}
+              - {label: "Author Initials", name: "author_initials", widget: "string"}
+          
+          - label: "Company Information"
+            name: "companies"
+            widget: "object"
+            fields:
+              - {label: "Section Title", name: "title", widget: "string", default: "Powered by Industry Leaders"}
+              - {label: "Section Subtitle", name: "subtitle", widget: "text"}
+              - label: "Uptivity"
+                name: "uptivity"
+                widget: "object"
+                fields:
+                  - {label: "Description", name: "description", widget: "text"}
+                  - label: "Features"
+                    name: "features"
+                    widget: "list"
+                    field: {label: "Feature", name: "feature", widget: "string"}
+              - label: "Wellness-stores"
+                name: "wellness_stores"
+                widget: "object"
+                fields:
+                  - {label: "Description", name: "description", widget: "text"}
+                  - label: "Features"
+                    name: "features"
+                    widget: "list"
+                    field: {label: "Feature", name: "feature", widget: "string"}
+              - {label: "Partnership Description", name: "partnership_description", widget: "text"}
+          
+          - label: "Call to Action"
+            name: "cta"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string", default: "Ready to Stop Wasting Money?"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Button Text", name: "button_text", widget: "string", default: "Get Started Today"}
+              - {label: "Button URL", name: "button_url", widget: "string", default: "/onboarding-form/"}
+
+      - label: "Onboarding Form"
+        name: "onboarding"
+        file: "content/onboarding.json"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string", default: "Join Wellness Marketplace"}
+          - {label: "Page Subtitle", name: "subtitle", widget: "text"}
+          - {label: "Form Success Message", name: "success_message", widget: "text"}
+          - {label: "Contact Email", name: "contact_email", widget: "string"}
+          - {label: "Contact Phone", name: "contact_phone", widget: "string"}
