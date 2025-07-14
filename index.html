@@ -1776,6 +1776,75 @@
        - Current page has call-to-action button linking to form
        - Allows better tracking and analytics for conversions
     -->
+// Load content from JSON file
+async function loadContent() {
+    try {
+        const response = await fetch('/content/homepage.json');
+        const content = await response.json();
+        
+        // Update hero section
+        document.querySelector('.hero-title').textContent = content.hero.title;
+        document.querySelector('.hero-description').textContent = content.hero.description;
+        
+        // Update stats
+        const stats = document.querySelectorAll('.stat');
+        content.hero.stats.forEach((stat, index) => {
+            if (stats[index]) {
+                stats[index].querySelector('.stat-number').textContent = stat.number;
+                stats[index].querySelector('.stat-label').textContent = stat.label;
+            }
+        });
+        
+        // Update problem section
+        document.querySelector('.problem-title').textContent = content.problem.title;
+        document.querySelector('.problem-subtitle').textContent = content.problem.subtitle;
+        
+        // Update problem list
+        const problemList = document.querySelector('.problem-list');
+        problemList.innerHTML = '';
+        content.problem.problems.forEach(problem => {
+            const li = document.createElement('li');
+            li.innerHTML = `<span>❌</span><span>${problem}</span>`;
+            problemList.appendChild(li);
+        });
+        
+        // Update solution list
+        const solutionList = document.querySelector('.solution-list');
+        solutionList.innerHTML = '';
+        content.problem.solutions.forEach(solution => {
+            const li = document.createElement('li');
+            li.innerHTML = `<span>✅</span><span>${solution}</span>`;
+            solutionList.appendChild(li);
+        });
+        
+        // Update features section
+        document.querySelector('.features-title').textContent = content.features.title;
+        document.querySelector('.features-subtitle').textContent = content.features.subtitle;
+        
+        // Update features grid
+        const featuresGrid = document.querySelector('.features-grid');
+        featuresGrid.innerHTML = '';
+        content.features.features.forEach(feature => {
+            const featureDiv = document.createElement('div');
+            featureDiv.className = 'wellness-feature';
+            featureDiv.innerHTML = `
+                <div class="wellness-feature-icon">${feature.icon}</div>
+                <h3>${feature.title}</h3>
+                <p>${feature.description}</p>
+                <div class="wellness-feature-highlights">${feature.highlights}</div>
+            `;
+            featuresGrid.appendChild(featureDiv);
+        });
+        
+        // Update other sections...
+        // (Add more updates for benefits, testimonial, companies, etc.)
+        
+    } catch (error) {
+        console.log('Content not yet available, using default content');
+    }
+}
 
+// Load content when page loads
+document.addEventListener('DOMContentLoaded', loadContent);
 </body>
 </html>
