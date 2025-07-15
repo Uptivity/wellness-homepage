@@ -1108,6 +1108,41 @@
             }
         }
         
+        /* Content Image Placeholder Styles */
+        .content-image {
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+            border: 2px dashed #d1d5db;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+        
+        .content-image-label {
+            background: #4F46E5;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            font-size: 0.75rem;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .problem-solution-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        
+        @media (min-width: 1024px) {
+            .problem-solution-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
         /* Responsive adjustments */
         @media (max-width: 640px) {
             .container, .container-xl {
@@ -1178,26 +1213,26 @@
         <div class="container-xl">
             <div class="hero-content">
                 <div>
-                    <h1>
+                    <h1 id="hero-title">
                         Transform Your <span class="gradient-text">Surplus Inventory</span> Into Profit
                     </h1>
-                    <p>
+                    <p id="hero-description">
                         The premier B2B marketplace for CBD, vapes, and alternative health products. Connect with verified traders, liquidate expiring stock, and maximize your wholesale revenue.
                     </p>
                     
                     <!-- Key Stats -->
                     <div class="stats-grid">
                         <div class="stat">
-                            <div class="stat-number stats-counter">$50M+</div>
-                            <div class="stat-label">Lost annually to waste</div>
+                            <div class="stat-number stats-counter" id="stat-1-number">$50M+</div>
+                            <div class="stat-label" id="stat-1-label">Lost annually to waste</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number stats-counter">$15M+</div>
-                            <div class="stat-label">Potential savings Year 1</div>
+                            <div class="stat-number stats-counter" id="stat-2-number">$15M+</div>
+                            <div class="stat-label" id="stat-2-label">Potential savings Year 1</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number stats-counter">60-80%</div>
-                            <div class="stat-label">Value recovery rate</div>
+                            <div class="stat-number stats-counter" id="stat-3-number">60-80%</div>
+                            <div class="stat-label" id="stat-3-label">Value recovery rate</div>
                         </div>
                     </div>
 
@@ -1243,16 +1278,17 @@
     <section class="section section-white">
         <div class="container-xl">
             <div style="text-align: center; margin-bottom: 4rem;">
-                <h2 class="section-title">Stop Losing Money on Expiring Inventory</h2>
-                <p class="section-subtitle">
+                <h2 class="section-title" id="problem-title">Stop Losing Money on Expiring Inventory</h2>
+                <p class="section-subtitle" id="problem-subtitle">
                     Millions of dollars in CBD, vape, and wellness products are discarded annually due to approaching expiry dates. We're changing that.
                 </p>
             </div>
 
             <!-- Content Image Placeholder 1 -->
-            <div class="content-image">
-                <div class="content-image-label">CMS Upload Area</div>
-                Add image of expired CBD/vape products or warehouse waste statistics
+            <div class="content-image" id="problem-image-container">
+                <img id="problem-image" src="" alt="Problem section image" style="display: none; width: 100%; height: auto; border-radius: 0.5rem;">
+                <div id="problem-image-placeholder" class="content-image-label">CMS Upload Area</div>
+                <div id="problem-image-placeholder">Add image of expired CBD/vape products or warehouse waste statistics</div>
             </div>
 
             <div class="problem-solution-grid">
@@ -1311,16 +1347,19 @@
     <section id="features" class="section section-gray">
         <div class="container-xl">
             <div style="text-align: center; margin-bottom: 4rem;">
-                <h2 class="section-title">Built for Wholesale Trading</h2>
-                <p class="section-subtitle">
+                <h2 class="section-title" id="features-title">Built for Wholesale Trading</h2>
+                <p class="section-subtitle" id="features-subtitle">
                     Professional B2B features designed specifically for the CBD, vape, and alternative health industries.
                 </p>
             </div>
 
             <!-- Content Image Placeholder 2 -->
-            <div class="content-image">
-                <div class="content-image-label">CMS Upload Area</div>
-                Add image of B2B marketplace interface or wholesale trading dashboard
+            <div class="content-image" id="features-image-container">
+                <img id="features-image" src="" alt="Features section image" style="display: none; width: 100%; height: auto; border-radius: 0.5rem;">
+                <div id="features-image-placeholder">
+                    <div class="content-image-label">CMS Upload Area</div>
+                    Add image of B2B marketplace interface or wholesale trading dashboard
+                </div>
             </div>
 
             <div class="features-grid">
@@ -1391,8 +1430,8 @@
     <section id="benefits" class="section section-white">
         <div class="container-xl">
             <div style="text-align: center; margin-bottom: 4rem;">
-                <h2 class="section-title">Why Choose Wellness Marketplace</h2>
-                <p class="section-subtitle">
+                <h2 class="section-title" id="benefits-title">Why Choose Wellness Marketplace</h2>
+                <p class="section-subtitle" id="benefits-subtitle">
                     Join the most trusted B2B platform in the wellness industry, backed by proven expertise and industry leaders.
                 </p>
             </div>
@@ -1470,8 +1509,12 @@
             </div>
 
             <!-- Content Image Placeholder 3 -->
-            <div class="content-image">
-                🤝 CMS: Add image of partnership handshake or joint venture visualization
+            <div class="content-image" id="partnership-image-container">
+                <img id="partnership-image" src="" alt="Partnership section image" style="display: none; width: 100%; height: auto; border-radius: 0.5rem;">
+                <div id="partnership-image-placeholder">
+                    <div class="content-image-label">CMS Upload Area</div>
+                    Add image of partnership handshake or joint venture visualization
+                </div>
             </div>
 
             <div class="company-grid">
@@ -1586,8 +1629,8 @@
     <!-- CTA Section -->
     <section class="py-20" style="background: linear-gradient(to right, #4F46E5, #7C3AED);">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl font-bold text-white mb-6">Ready to Stop Wasting Money?</h2>
-            <p class="text-xl text-indigo-100 mb-8 leading-relaxed">
+            <h2 class="text-4xl font-bold text-white mb-6" id="cta-title">Ready to Stop Wasting Money?</h2>
+            <p class="text-xl text-indigo-100 mb-8 leading-relaxed" id="cta-description">
                 Join hundreds of wellness businesses already saving millions through smart surplus trading. 
                 Your next sale could be just one click away.
             </p>
@@ -1737,128 +1780,139 @@
             }
         });
 
+        // Load content from CMS
+        async function loadContent() {
+            try {
+                const response = await fetch('/content/homepage.json');
+                const content = await response.json();
+                
+                console.log('Loaded content:', content); // Debug log
+                
+                // Update Hero Section
+                if (content.hero) {
+                    const titleElement = document.getElementById('hero-title');
+                    const descElement = document.getElementById('hero-description');
+                    
+                    if (titleElement && content.hero.title) {
+                        titleElement.innerHTML = content.hero.title.replace('Surplus Inventory', '<span class="gradient-text">Surplus Inventory</span>');
+                    }
+                    if (descElement && content.hero.description) {
+                        descElement.textContent = content.hero.description;
+                    }
+                    
+                    // Update stats
+                    if (content.hero.stats) {
+                        content.hero.stats.forEach((stat, index) => {
+                            const numberEl = document.getElementById(`stat-${index + 1}-number`);
+                            const labelEl = document.getElementById(`stat-${index + 1}-label`);
+                            if (numberEl) numberEl.textContent = stat.number;
+                            if (labelEl) labelEl.textContent = stat.label;
+                        });
+                    }
+                }
+                
+                // Update Problem Section
+                if (content.problem) {
+                    const titleEl = document.getElementById('problem-title');
+                    const subtitleEl = document.getElementById('problem-subtitle');
+                    if (titleEl && content.problem.title) titleEl.textContent = content.problem.title;
+                    if (subtitleEl && content.problem.subtitle) subtitleEl.textContent = content.problem.subtitle;
+                }
+                
+                // Update Features Section
+                if (content.features) {
+                    const titleEl = document.getElementById('features-title');
+                    const subtitleEl = document.getElementById('features-subtitle');
+                    if (titleEl && content.features.title) titleEl.textContent = content.features.title;
+                    if (subtitleEl && content.features.subtitle) subtitleEl.textContent = content.features.subtitle;
+                }
+                
+                // Update Benefits Section
+                if (content.benefits) {
+                    const titleEl = document.getElementById('benefits-title');
+                    const subtitleEl = document.getElementById('benefits-subtitle');
+                    if (titleEl && content.benefits.title) titleEl.textContent = content.benefits.title;
+                    if (subtitleEl && content.benefits.subtitle) subtitleEl.textContent = content.benefits.subtitle;
+                }
+                
+                // Update CTA Section
+                if (content.cta) {
+                    const titleEl = document.getElementById('cta-title');
+                    const descEl = document.getElementById('cta-description');
+                    if (titleEl && content.cta.title) titleEl.textContent = content.cta.title;
+                    if (descEl && content.cta.description) descEl.textContent = content.cta.description;
+                }
+                
+                // Load and display images
+                loadImages(content);
+                
+                console.log('Content updated successfully!');
+                
+            } catch (error) {
+                console.log('Could not load dynamic content, using default:', error);
+            }
+        }
+
+        // Function to load images
+        function loadImages(content) {
+            // Problem section image
+            if (content.problem && content.problem.image) {
+                const img = document.getElementById('problem-image');
+                const placeholder = document.getElementById('problem-image-placeholder');
+                if (img && placeholder) {
+                    img.src = content.problem.image;
+                    img.style.display = 'block';
+                    placeholder.style.display = 'none';
+                }
+            }
+            
+            // Features section image
+            if (content.features && content.features.image) {
+                const img = document.getElementById('features-image');
+                const placeholder = document.getElementById('features-image-placeholder');
+                if (img && placeholder) {
+                    img.src = content.features.image;
+                    img.style.display = 'block';
+                    placeholder.style.display = 'none';
+                }
+            }
+            
+            // Partnership section image
+            if (content.companies && content.companies.image) {
+                const img = document.getElementById('partnership-image');
+                const placeholder = document.getElementById('partnership-image-placeholder');
+                if (img && placeholder) {
+                    img.src = content.companies.image;
+                    img.style.display = 'block';
+                    placeholder.style.display = 'none';
+                }
+            }
+        }
+
+        // Load content when page loads
+        document.addEventListener('DOMContentLoaded', loadContent);
+
+        // Also try loading after a short delay (in case of timing issues)
+        setTimeout(loadContent, 1000);
+
         console.log('Wellness Marketplace website loaded successfully!');
         console.log('🎨 Website features Wellness-stores brand colors');
         console.log('📝 CMS integration ready for content management');
         console.log('🖼️ Image placeholders ready for content upload');
     </script>
 
-    <!-- CMS Integration Comments -->
-    <!-- 
-    CONTENT MANAGEMENT SYSTEM SETUP:
-    
-    1. RECOMMENDED CMS OPTIONS:
-       - Netlify CMS (Decap CMS): Free, git-based, perfect for static sites
-       - Forestry: User-friendly, great for non-technical users
-       - Sanity: Powerful headless CMS with real-time collaboration
-       - Simple JSON approach: For basic content updates
-    
-    2. CONTENT AREAS TO MANAGE:
-       - Hero section text and statistics
-       - Feature cards (6 tiles) text and icons
-       - Benefits section (4 tiles) text and icons
-       - Company descriptions (Uptivity & Wellness-stores)
-       - Image uploads (3 placeholder areas marked)
-       - Contact information and links
-    
-    3. IMAGE PLACEHOLDERS READY FOR:
-       - 📊 Expired inventory/waste statistics visualization
-       - 🏢 B2B marketplace interface screenshot
-       - 🤝 Partnership or handshake imagery
-    
-    4. LOGO INTEGRATION:
-       - Wellness-stores logo: Purple/lavender branding incorporated
-       - Uptivity logo: Ready for integration in About section
-       - Current placeholders can be replaced via CMS
-    
-    5. FORM SEPARATION:
-       - Main form moved to separate page: onboarding-form.html
-       - Current page has call-to-action button linking to form
-       - Allows better tracking and analytics for conversions
-    -->
-// Load content from JSON file
-async function loadContent() {
-    try {
-        const response = await fetch('/content/homepage.json');
-        const content = await response.json();
-        
-        // Update hero section
-        document.querySelector('.hero-title').textContent = content.hero.title;
-        document.querySelector('.hero-description').textContent = content.hero.description;
-        
-        // Update stats
-        const stats = document.querySelectorAll('.stat');
-        content.hero.stats.forEach((stat, index) => {
-            if (stats[index]) {
-                stats[index].querySelector('.stat-number').textContent = stat.number;
-                stats[index].querySelector('.stat-label').textContent = stat.label;
-            }
-        });
-        
-        // Update problem section
-        document.querySelector('.problem-title').textContent = content.problem.title;
-        document.querySelector('.problem-subtitle').textContent = content.problem.subtitle;
-        
-        // Update problem list
-        const problemList = document.querySelector('.problem-list');
-        problemList.innerHTML = '';
-        content.problem.problems.forEach(problem => {
-            const li = document.createElement('li');
-            li.innerHTML = `<span>❌</span><span>${problem}</span>`;
-            problemList.appendChild(li);
-        });
-        
-        // Update solution list
-        const solutionList = document.querySelector('.solution-list');
-        solutionList.innerHTML = '';
-        content.problem.solutions.forEach(solution => {
-            const li = document.createElement('li');
-            li.innerHTML = `<span>✅</span><span>${solution}</span>`;
-            solutionList.appendChild(li);
-        });
-        
-        // Update features section
-        document.querySelector('.features-title').textContent = content.features.title;
-        document.querySelector('.features-subtitle').textContent = content.features.subtitle;
-        
-        // Update features grid
-        const featuresGrid = document.querySelector('.features-grid');
-        featuresGrid.innerHTML = '';
-        content.features.features.forEach(feature => {
-            const featureDiv = document.createElement('div');
-            featureDiv.className = 'wellness-feature';
-            featureDiv.innerHTML = `
-                <div class="wellness-feature-icon">${feature.icon}</div>
-                <h3>${feature.title}</h3>
-                <p>${feature.description}</p>
-                <div class="wellness-feature-highlights">${feature.highlights}</div>
-            `;
-            featuresGrid.appendChild(featureDiv);
-        });
-        
-        // Update other sections...
-        // (Add more updates for benefits, testimonial, companies, etc.)
-        
-    } catch (error) {
-        console.log('Content not yet available, using default content');
-    }
-}
-
-// Load content when page loads
-document.addEventListener('DOMContentLoaded', loadContent);
-
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
         });
       }
-    });
-  }
-</script>    
+    </script>    
 
 </body>
 </html>
