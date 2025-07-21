@@ -760,6 +760,168 @@
                 50% { transform: rotate(0deg) translateY(-10px); }
             }
         }
+		/* COPY THIS CSS AND ADD IT TO YOUR EXISTING <style> SECTION IN index.html */
+/* Add this right before the closing </style> tag */
+
+/* Footer and CTA Section Fixes */
+.py-20 { padding: 5rem 0; }
+.max-w-4xl { max-width: 56rem; margin: 0 auto; }
+.text-4xl { font-size: 2.25rem; font-weight: 700; }
+.text-xl { font-size: 1.25rem; }
+.text-indigo-100 { color: #e0e7ff; }
+.leading-relaxed { line-height: 1.625; }
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.justify-center { justify-content: center; }
+.space-y-4 > * + * { margin-top: 1rem; }
+.space-x-6 > * + * { margin-left: 1.5rem; }
+.px-8 { padding: 0 2rem; }
+.py-4 { padding: 1rem 0; }
+.rounded-xl { border-radius: 0.75rem; }
+.font-semibold { font-weight: 600; }
+.border-2 { border: 2px solid; }
+.border-white { border-color: white; }
+.transition-all { transition: all 0.3s ease; }
+.transform { transition: transform 0.3s ease; }
+.hover\:scale-105:hover { transform: scale(1.05); }
+.hover\:bg-gray-50:hover { background-color: #f9fafb; }
+.hover\:bg-white:hover { background-color: white; }
+.hover\:text-indigo-600:hover { color: #4f46e5; }
+
+/* Footer Styles */
+.footer {
+    background-color: #111827;
+    color: white;
+    padding: 3rem 0 1rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+    }
+    .flex-col { flex-direction: row; }
+    .space-y-4 > * + * { margin-top: 0; }
+}
+
+.footer-brand {
+    margin-bottom: 1rem;
+}
+
+.footer-description {
+    color: #9ca3af;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-social a {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: #374151;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9ca3af;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+    background-color: #4f46e5;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.footer-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: #9ca3af;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    border-top: 1px solid #374151;
+    padding-top: 2rem;
+    margin-top: 2rem;
+}
+
+.footer-bottom-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .footer-bottom-content {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+}
+
+.footer-copyright {
+    color: #9ca3af;
+    font-size: 0.875rem;
+}
+
+.footer-offices {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: #9ca3af;
+}
+
+@media (min-width: 640px) {
+    .footer-offices {
+        flex-direction: row;
+        gap: 2rem;
+    }
+}
+
+/* Mobile responsive fixes */
+@media (max-width: 640px) {
+    .py-20 { padding: 3rem 0; }
+    .text-4xl { font-size: 1.875rem; }
+    .px-8 { padding: 0 1rem; }
+    .flex-col { flex-direction: column; }
+    .space-x-6 > * + * { margin-left: 0; margin-top: 1rem; }
+}
+		
+		
     </style>
 </head>
 <body>
