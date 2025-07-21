@@ -32,74 +32,6 @@
             padding: 0 1rem;
         }
         
-        .flex {
-            display: flex;
-        }
-        
-        .items-center {
-            align-items: center;
-        }
-        
-        .justify-between {
-            justify-content: space-between;
-        }
-        
-        .justify-center {
-            justify-content: center;
-        }
-        
-        .space-x-3 > * + * {
-            margin-left: 0.75rem;
-        }
-        
-        .space-x-4 > * + * {
-            margin-left: 1rem;
-        }
-        
-        .space-x-6 > * + * {
-            margin-left: 1.5rem;
-        }
-        
-        .space-x-8 > * + * {
-            margin-left: 2rem;
-        }
-        
-        .space-y-4 > * + * {
-            margin-top: 1rem;
-        }
-        
-        .space-y-6 > * + * {
-            margin-top: 1.5rem;
-        }
-        
-        .grid {
-            display: grid;
-        }
-        
-        .grid-cols-2 {
-            grid-template-columns: repeat(2, 1fr);
-        }
-        
-        .grid-cols-3 {
-            grid-template-columns: repeat(3, 1fr);
-        }
-        
-        .gap-6 {
-            gap: 1.5rem;
-        }
-        
-        .gap-8 {
-            gap: 2rem;
-        }
-        
-        .gap-12 {
-            gap: 3rem;
-        }
-        
-        .gap-16 {
-            gap: 4rem;
-        }
-        
         /* Navigation Styles */
         .navbar {
             background: white;
@@ -390,11 +322,23 @@
         }
         
         /* Problem/Solution Cards */
+        .problem-solution {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        @media (min-width: 1024px) {
+            .problem-solution {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
         .problem-card {
             background: #fef2f2;
             border-left: 4px solid #ef4444;
             padding: 1.5rem;
-            margin-bottom: 2rem;
         }
         
         .solution-card {
@@ -716,342 +660,22 @@
             line-height: 1.6;
         }
         
-        /* Form Styles */
-        .form-container {
-            background: linear-gradient(135deg, #f9fafb 0%, #e0e7ff 100%);
-            border-radius: 1rem;
+        /* Content Placeholder/Image Styles */
+        .content-placeholder {
+            background: #f3f4f6;
+            border: 2px dashed #d1d5db;
+            border-radius: 0.5rem;
             padding: 2rem;
-        }
-        
-        .form-grid {
-            display: grid;
-            gap: 1.5rem;
-        }
-        
-        .form-grid.two-cols {
-            grid-template-columns: 1fr;
-        }
-        
-        @media (min-width: 768px) {
-            .form-grid.two-cols {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        .form-grid.three-cols {
-            grid-template-columns: 1fr;
-        }
-        
-        @media (min-width: 768px) {
-            .form-grid.three-cols {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .form-label {
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: #374151;
-            margin-bottom: 0.5rem;
-        }
-        
-        .form-input,
-        .form-select,
-        .form-textarea {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            border: 1px solid #d1d5db;
-            border-radius: 0.5rem;
-            font-size: 1rem;
-            transition: all 0.3s;
-        }
-        
-        .form-input:focus,
-        .form-select:focus,
-        .form-textarea:focus {
-            outline: none;
-            ring: 2px solid #4F46E5;
-            border-color: #4F46E5;
-        }
-        
-        .checkbox-grid {
-            display: grid;
-            gap: 1rem;
-        }
-        
-        @media (min-width: 768px) {
-            .checkbox-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        .checkbox-grid.three-cols {
-            grid-template-columns: 1fr;
-        }
-        
-        @media (min-width: 768px) {
-            .checkbox-grid.three-cols {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        
-        .checkbox-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .checkbox-item input[type="checkbox"],
-        .checkbox-item input[type="radio"] {
-            width: 1rem;
-            height: 1rem;
-            accent-color: #4F46E5;
-        }
-        
-        .checkbox-label {
-            font-size: 0.875rem;
-            color: #374151;
-            line-height: 1.4;
-        }
-        
-        .form-submit {
-            width: 100%;
-            padding: 1rem 2rem;
-            border-radius: 0.75rem;
-            font-weight: 600;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .form-submit:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-        }
-        
-        .form-note {
             text-align: center;
-            font-size: 0.875rem;
+            margin: 2rem 0;
             color: #6b7280;
-            margin-top: 1rem;
         }
         
-        .success-message {
-            margin-top: 1.5rem;
-            padding: 1rem;
-            background: #f0fdf4;
-            border: 1px solid #bbf7d0;
+        .content-image img {
+            width: 100%;
+            height: auto;
             border-radius: 0.5rem;
-        }
-        
-        .success-header {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .success-text {
-            color: #065f46;
-            font-weight: 500;
-        }
-        
-        .success-description {
-            color: #047857;
-            font-size: 0.875rem;
-            margin-top: 0.5rem;
-        }
-        
-        /* CTA Section */
-        .cta-section {
-            padding: 5rem 0;
-            background: linear-gradient(to right, #4F46E5, #7C3AED);
-        }
-        
-        .cta-container {
-            max-width: 64rem;
-            margin: 0 auto;
-            padding: 0 1rem;
-            text-align: center;
-        }
-        
-        .cta-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 1.5rem;
-        }
-        
-        .cta-description {
-            font-size: 1.25rem;
-            color: #c7d2fe;
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            justify-content: center;
-        }
-        
-        @media (min-width: 640px) {
-            .cta-buttons {
-                flex-direction: row;
-            }
-        }
-        
-        .btn-white {
-            background: white;
-            color: #4F46E5;
-            padding: 1rem 2rem;
-            border-radius: 0.75rem;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            display: inline-block;
-            text-align: center;
-        }
-        
-        .btn-white:hover {
-            background: #f9fafb;
-            transform: scale(1.05);
-        }
-        
-        .btn-outline {
-            border: 2px solid white;
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 0.75rem;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            background: transparent;
-            cursor: pointer;
-            display: inline-block;
-            text-align: center;
-        }
-        
-        .btn-outline:hover {
-            background: white;
-            color: #4F46E5;
-        }
-        
-        /* Footer */
-        .footer {
-            background: #111827;
-            color: white;
-            padding: 4rem 0;
-        }
-        
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-        }
-        
-        @media (min-width: 768px) {
-            .footer-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-        
-        .footer-brand {
-            margin-bottom: 1rem;
-        }
-        
-        .footer-description {
-            color: #9ca3af;
-            font-size: 0.875rem;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-        
-        .footer-social {
-            display: flex;
-            gap: 1rem;
-        }
-        
-        .footer-social a {
-            color: #9ca3af;
-            transition: color 0.3s;
-        }
-        
-        .footer-social a:hover {
-            color: white;
-        }
-        
-        .footer-title {
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-        
-        .footer-links {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .footer-links li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .footer-links a {
-            color: #9ca3af;
-            text-decoration: none;
-            font-size: 0.875rem;
-            transition: color 0.3s;
-        }
-        
-        .footer-links a:hover {
-            color: white;
-        }
-        
-        .footer-bottom {
-            border-top: 1px solid #374151;
-            margin-top: 3rem;
-            padding-top: 2rem;
-            text-align: center;
-        }
-        
-        .footer-bottom-content {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        @media (min-width: 768px) {
-            .footer-bottom-content {
-                flex-direction: row;
-            }
-        }
-        
-        .footer-copyright {
-            color: #9ca3af;
-            font-size: 0.875rem;
-        }
-        
-        .footer-offices {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            font-size: 0.875rem;
-            color: #9ca3af;
-        }
-        
-        @media (min-width: 768px) {
-            .footer-offices {
-                flex-direction: row;
-                gap: 1.5rem;
-            }
+            margin: 2rem 0;
         }
         
         /* Mobile Menu */
@@ -1108,41 +732,6 @@
             }
         }
         
-        /* Content Image Placeholder Styles */
-        .content-image {
-            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
-            border: 2px dashed #d1d5db;
-            border-radius: 0.75rem;
-            padding: 2rem;
-            text-align: center;
-            margin: 2rem 0;
-            color: #6b7280;
-            font-size: 0.875rem;
-        }
-        
-        .content-image-label {
-            background: #4F46E5;
-            color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 0.375rem;
-            font-weight: 600;
-            font-size: 0.75rem;
-            display: inline-block;
-            margin-bottom: 0.5rem;
-        }
-        
-        .problem-solution-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-        }
-        
-        @media (min-width: 1024px) {
-            .problem-solution-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-        
         /* Responsive adjustments */
         @media (max-width: 640px) {
             .container, .container-xl {
@@ -1154,10 +743,6 @@
             }
             
             .section-title {
-                font-size: 2rem;
-            }
-            
-            .cta-title {
                 font-size: 2rem;
             }
             
@@ -1177,7 +762,7 @@
         }
     </style>
 </head>
-<body class="bg-gray-50">
+<body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
@@ -1191,7 +776,7 @@
                 <a href="#features">Features</a>
                 <a href="#benefits">Benefits</a>
                 <a href="#about">About</a>
-                <a href="#onboarding" class="btn-primary">Get Started</a>
+                <a href="onboarding-form.html" class="btn-primary">Get Started</a>
             </div>
             <button class="hamburger" onclick="toggleMenu()">
                 <i class="fas fa-bars"></i>
@@ -1203,7 +788,7 @@
                 <a href="#features">Features</a>
                 <a href="#benefits">Benefits</a>
                 <a href="#about">About</a>
-                <a href="#onboarding" class="btn-primary mobile-button">Get Started</a>
+                <a href="onboarding-form.html" class="btn-primary mobile-button">Get Started</a>
             </div>
         </div>
     </nav>
@@ -1223,21 +808,21 @@
                     <!-- Key Stats -->
                     <div class="stats-grid">
                         <div class="stat">
-                            <div class="stat-number stats-counter" id="stat-1-number">$50M+</div>
+                            <div class="stat-number" id="stat-1-number">$50M+</div>
                             <div class="stat-label" id="stat-1-label">Lost annually to waste</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number stats-counter" id="stat-2-number">$15M+</div>
+                            <div class="stat-number" id="stat-2-number">$15M+</div>
                             <div class="stat-label" id="stat-2-label">Potential savings Year 1</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number stats-counter" id="stat-3-number">60-80%</div>
+                            <div class="stat-number" id="stat-3-number">60-80%</div>
                             <div class="stat-label" id="stat-3-label">Value recovery rate</div>
                         </div>
                     </div>
 
                     <div class="hero-buttons">
-                        <a href="#onboarding" class="btn-primary">
+                        <a href="onboarding-form.html" class="btn-primary">
                             Start Trading Now
                         </a>
                         <a href="#features" class="btn-secondary">
@@ -1284,18 +869,20 @@
                 </p>
             </div>
 
-            <!-- Content Image Placeholder 1 -->
+            <!-- Problem Section Image -->
             <div class="content-image" id="problem-image-container">
-                <img id="problem-image" src="" alt="Problem section image" style="display: none; width: 100%; height: auto; border-radius: 0.5rem;">
-                <div id="problem-image-placeholder" class="content-image-label">CMS Upload Area</div>
-                <div id="problem-image-placeholder">Add image of expired CBD/vape products or warehouse waste statistics</div>
+                <img id="problem-image" src="" alt="Problem section image" style="display: none;">
+                <div id="problem-image-placeholder" class="content-placeholder">
+                    📊 <strong>CMS Upload Area</strong><br>
+                    Add image of expired CBD/vape products or warehouse waste statistics
+                </div>
             </div>
 
-            <div class="problem-solution-grid">
+            <div class="problem-solution">
                 <div>
                     <div class="problem-card">
                         <h3 class="card-title">The Problem</h3>
-                        <ul class="card-list">
+                        <ul class="card-list" id="problem-list">
                             <li>
                                 <i class="fas fa-times-circle"></i>
                                 <span>Products approaching expiry dates become unsellable</span>
@@ -1319,7 +906,7 @@
                 <div>
                     <div class="solution-card">
                         <h3 class="card-title">Our Solution</h3>
-                        <ul class="card-list">
+                        <ul class="card-list" id="solution-list">
                             <li>
                                 <i class="fas fa-check-circle"></i>
                                 <span>Dedicated marketplace for wholesale liquidation</span>
@@ -1353,16 +940,16 @@
                 </p>
             </div>
 
-            <!-- Content Image Placeholder 2 -->
+            <!-- Features Section Image -->
             <div class="content-image" id="features-image-container">
-                <img id="features-image" src="" alt="Features section image" style="display: none; width: 100%; height: auto; border-radius: 0.5rem;">
-                <div id="features-image-placeholder">
-                    <div class="content-image-label">CMS Upload Area</div>
+                <img id="features-image" src="" alt="Features section image" style="display: none;">
+                <div id="features-image-placeholder" class="content-placeholder">
+                    🏢 <strong>CMS Upload Area</strong><br>
                     Add image of B2B marketplace interface or wholesale trading dashboard
                 </div>
             </div>
 
-            <div class="features-grid">
+            <div class="features-grid" id="features-grid">
                 <!-- Volume Pricing -->
                 <div class="feature-card">
                     <div class="feature-icon">
@@ -1502,17 +1089,17 @@
     <section id="about" class="section section-gray">
         <div class="container-xl">
             <div style="text-align: center; margin-bottom: 4rem;">
-                <h2 class="section-title">Powered by Industry Leaders</h2>
-                <p class="section-subtitle">
+                <h2 class="section-title" id="companies-title">Powered by Industry Leaders</h2>
+                <p class="section-subtitle" id="companies-subtitle">
                     A 50/50 joint venture combining technical expertise with deep industry knowledge and relationships.
                 </p>
             </div>
 
-            <!-- Content Image Placeholder 3 -->
+            <!-- Partnership Section Image -->
             <div class="content-image" id="partnership-image-container">
-                <img id="partnership-image" src="" alt="Partnership section image" style="display: none; width: 100%; height: auto; border-radius: 0.5rem;">
-                <div id="partnership-image-placeholder">
-                    <div class="content-image-label">CMS Upload Area</div>
+                <img id="partnership-image" src="" alt="Partnership section image" style="display: none;">
+                <div id="partnership-image-placeholder" class="content-placeholder">
+                    🤝 <strong>CMS Upload Area</strong><br>
                     Add image of partnership handshake or joint venture visualization
                 </div>
             </div>
@@ -1521,7 +1108,9 @@
                 <!-- Uptivity -->
                 <div class="company-card">
                     <div class="company-header">
-                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjgwIiB2aWV3Qm94PSIwIDAgMjAwIDgwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8IS0tIFVwdGl2aXR5IExvZ28gUGxhY2Vob2xkZXIgLS0+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iODAiIGZpbGw9IiNmOWZhZmIiLz4KPHR5cGUKPHRleHQgeD0iMTAwIiB5PSI0NSIgZm9udC1mYW1pbHk9IkludGVyIiBmb250LXNpemU9IjE0IiBmaWxsPSIjMWE5MmY4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5VcHRpdml0eSBMb2dvPC90ZXh0Pgo8L3N2Zz4K" alt="Uptivity Logo" class="company-logo uptivity-logo">
+                        <div class="company-icon blue">
+                            <i class="fas fa-microchip"></i>
+                        </div>
                         <div>
                             <h3 class="company-name">Uptivity</h3>
                             <p class="company-location">United Kingdom</p>
@@ -1549,7 +1138,9 @@
                 <!-- Wellness-stores -->
                 <div class="company-card">
                     <div class="company-header">
-                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjgwIiB2aWV3Qm94PSIwIDAgMjAwIDgwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8IS0tIFdlbGxuZXNzLXN0b3JlcyBMb2dvIFBsYWNlaG9sZGVyIC0tPgo8cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjZjlmYWZiIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iNDUiIGZvbnQtZmFtaWx5PSJJbnRlciIgZm9udC1zaXplPSIxNCIgZmlsbD0iI2E4NTVmNyIgdGV4dC1hbmNob3I9Im1pZGRsZSI+V2VsbG5lc3Mtc3RvcmVzIExvZ288L3RleHQ+Cjwvc3ZnPgo=" alt="Wellness-stores Logo" class="company-logo wellness-logo">
+                        <div class="company-icon green">
+                            <i class="fas fa-leaf"></i>
+                        </div>
                         <div>
                             <h3 class="company-name">Wellness-stores</h3>
                             <p class="company-location">Wisconsin, USA</p>
@@ -1578,7 +1169,7 @@
             <div style="margin-top: 3rem;">
                 <div class="partnership-card">
                     <h3 class="partnership-title">Perfect Partnership</h3>
-                    <p class="partnership-description">
+                    <p class="partnership-description" id="partnership-description">
                         This joint venture combines Uptivity's cutting-edge technology and automation capabilities with Wellness-stores' deep industry knowledge and established relationships. Together, we're creating the most comprehensive B2B marketplace for the wellness industry, designed to solve real problems and drive measurable results for our partners.
                     </p>
                 </div>
@@ -1586,56 +1177,16 @@
         </div>
     </section>
 
-    <!-- Onboarding Call-to-Action Section -->
-    <section id="onboarding" class="section section-white">
-        <div class="container">
-            <div style="text-align: center; margin-bottom: 3rem;">
-                <h2 class="section-title">Join Wellness Marketplace</h2>
-                <p class="section-subtitle">
-                    Ready to transform your surplus inventory into profit? Complete our onboarding process and our team will get you set up within 24 hours.
-                </p>
-            </div>
-
-            <div style="text-align: center; background: linear-gradient(135deg, #f9fafb 0%, #e0e7ff 50%, #ddd6fe 100%); border-radius: 1rem; padding: 3rem; max-width: 600px; margin: 0 auto;">
-                <div style="margin-bottom: 2rem;">
-                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #4F46E5 0%, #A855F7 50%, #7C3AED 100%); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center;">
-                        <i class="fas fa-clipboard-list" style="color: white; font-size: 2rem;"></i>
-                    </div>
-                    <h3 style="font-size: 1.5rem; font-weight: 700; color: #111827; margin-bottom: 1rem;">Start Your Application</h3>
-                    <p style="color: #6b7280; margin-bottom: 2rem;">
-                        Tell us about your business, trading needs, and how we can help you maximize your inventory value. Our comprehensive form takes just 5 minutes to complete.
-                    </p>
-                </div>
-
-                <div style="display: flex; flex-direction: column; gap: 1rem; align-items: center;">
-                    <a href="onboarding-form.html" class="btn-primary" style="padding: 1rem 2rem; border-radius: 0.75rem; font-weight: 600; text-decoration: none; display: inline-block;">
-                        Complete Application Form
-                    </a>
-                    <p style="font-size: 0.875rem; color: #6b7280;">
-                        ⏱️ Takes 5 minutes • 📞 24-hour response time • 🔒 Fully secure
-                    </p>
-                </div>
-            </div>
-
-            <div style="text-align: center; margin-top: 3rem;">
-                <p style="color: #6b7280; font-size: 0.875rem;">
-                    Questions? Email us at <a href="mailto:onboarding@wellnessmarketplace.com" style="color: #4F46E5; text-decoration: underline;">onboarding@wellnessmarketplace.com</a> 
-                    or call <a href="tel:+1-555-WELLNESS" style="color: #4F46E5; text-decoration: underline;">+1 (555) WELLNESS</a>
-                </p>
-            </div>
-        </div>
-    </section>
-
     <!-- CTA Section -->
     <section class="py-20" style="background: linear-gradient(to right, #4F46E5, #7C3AED);">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl font-bold text-white mb-6" id="cta-title">Ready to Stop Wasting Money?</h2>
-            <p class="text-xl text-indigo-100 mb-8 leading-relaxed" id="cta-description">
+            <h2 id="cta-title" class="text-4xl font-bold text-white mb-6">Ready to Stop Wasting Money?</h2>
+            <p id="cta-description" class="text-xl text-indigo-100 mb-8 leading-relaxed">
                 Join hundreds of wellness businesses already saving millions through smart surplus trading. 
                 Your next sale could be just one click away.
             </p>
             <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-                <a href="#onboarding" class="bg-white text-indigo-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-50 transition-all transform hover:scale-105">
+                <a href="onboarding-form.html" class="bg-white text-indigo-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-50 transition-all transform hover:scale-105">
                     Get Started Today
                 </a>
                 <a href="mailto:info@wellnessmarketplace.com" class="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-indigo-600 transition-all">
@@ -1717,69 +1268,11 @@
         </div>
     </footer>
 
+    <!-- Netlify Identity Widget -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+    <!-- Dynamic Content Loading Script -->
     <script>
-        // Mobile menu toggle
-        function toggleMenu() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            if (mobileMenu.classList.contains('show')) {
-                mobileMenu.classList.remove('show');
-            } else {
-                mobileMenu.classList.add('show');
-            }
-        }
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Animate stats counters when in view
-        const observerOptions = {
-            threshold: 0.5,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const counters = entry.target.querySelectorAll('.stats-counter');
-                    counters.forEach(counter => {
-                        counter.style.transform = 'scale(1.1)';
-                        setTimeout(() => {
-                            counter.style.transform = 'scale(1)';
-                        }, 200);
-                    });
-                }
-            });
-        }, observerOptions);
-
-        // Observe the hero section for stats animation
-        const heroSection = document.querySelector('.hero');
-        if (heroSection) {
-            observer.observe(heroSection);
-        }
-
-        // Add scroll effect to navigation
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.style.background = 'rgba(255, 255, 255, 0.95)';
-                nav.style.backdropFilter = 'blur(10px)';
-            } else {
-                nav.style.background = 'white';
-                nav.style.backdropFilter = 'none';
-            }
-        });
-
         // Load content from CMS
         async function loadContent() {
             try {
@@ -1817,6 +1310,32 @@
                     const subtitleEl = document.getElementById('problem-subtitle');
                     if (titleEl && content.problem.title) titleEl.textContent = content.problem.title;
                     if (subtitleEl && content.problem.subtitle) subtitleEl.textContent = content.problem.subtitle;
+                    
+                    // Update problem list
+                    if (content.problem.problems) {
+                        const problemList = document.getElementById('problem-list');
+                        if (problemList) {
+                            problemList.innerHTML = '';
+                            content.problem.problems.forEach(problem => {
+                                const li = document.createElement('li');
+                                li.innerHTML = `<i class="fas fa-times-circle"></i><span>${problem}</span>`;
+                                problemList.appendChild(li);
+                            });
+                        }
+                    }
+                    
+                    // Update solution list
+                    if (content.problem.solutions) {
+                        const solutionList = document.getElementById('solution-list');
+                        if (solutionList) {
+                            solutionList.innerHTML = '';
+                            content.problem.solutions.forEach(solution => {
+                                const li = document.createElement('li');
+                                li.innerHTML = `<i class="fas fa-check-circle"></i><span>${solution}</span>`;
+                                solutionList.appendChild(li);
+                            });
+                        }
+                    }
                 }
                 
                 // Update Features Section
@@ -1825,6 +1344,25 @@
                     const subtitleEl = document.getElementById('features-subtitle');
                     if (titleEl && content.features.title) titleEl.textContent = content.features.title;
                     if (subtitleEl && content.features.subtitle) subtitleEl.textContent = content.features.subtitle;
+                    
+                    // Update features grid
+                    if (content.features.features) {
+                        const featuresGrid = document.getElementById('features-grid');
+                        if (featuresGrid && content.features.features.length > 0) {
+                            featuresGrid.innerHTML = '';
+                            content.features.features.forEach(feature => {
+                                const featureDiv = document.createElement('div');
+                                featureDiv.className = 'feature-card';
+                                featureDiv.innerHTML = `
+                                    <div class="feature-icon">${feature.icon}</div>
+                                    <h3 class="feature-title">${feature.title}</h3>
+                                    <p class="feature-description">${feature.description}</p>
+                                    <div class="feature-highlights">${feature.highlights}</div>
+                                `;
+                                featuresGrid.appendChild(featureDiv);
+                            });
+                        }
+                    }
                 }
                 
                 // Update Benefits Section
@@ -1833,6 +1371,16 @@
                     const subtitleEl = document.getElementById('benefits-subtitle');
                     if (titleEl && content.benefits.title) titleEl.textContent = content.benefits.title;
                     if (subtitleEl && content.benefits.subtitle) subtitleEl.textContent = content.benefits.subtitle;
+                }
+                
+                // Update Company Section
+                if (content.companies) {
+                    const titleEl = document.getElementById('companies-title');
+                    const subtitleEl = document.getElementById('companies-subtitle');
+                    const descEl = document.getElementById('partnership-description');
+                    if (titleEl && content.companies.title) titleEl.textContent = content.companies.title;
+                    if (subtitleEl && content.companies.subtitle) subtitleEl.textContent = content.companies.subtitle;
+                    if (descEl && content.companies.partnership_description) descEl.textContent = content.companies.partnership_description;
                 }
                 
                 // Update CTA Section
@@ -1859,7 +1407,7 @@
             if (content.problem && content.problem.image) {
                 const img = document.getElementById('problem-image');
                 const placeholder = document.getElementById('problem-image-placeholder');
-                if (img && placeholder) {
+                if (img && placeholder && content.problem.image.trim() !== '') {
                     img.src = content.problem.image;
                     img.style.display = 'block';
                     placeholder.style.display = 'none';
@@ -1870,7 +1418,7 @@
             if (content.features && content.features.image) {
                 const img = document.getElementById('features-image');
                 const placeholder = document.getElementById('features-image-placeholder');
-                if (img && placeholder) {
+                if (img && placeholder && content.features.image.trim() !== '') {
                     img.src = content.features.image;
                     img.style.display = 'block';
                     placeholder.style.display = 'none';
@@ -1881,12 +1429,85 @@
             if (content.companies && content.companies.image) {
                 const img = document.getElementById('partnership-image');
                 const placeholder = document.getElementById('partnership-image-placeholder');
-                if (img && placeholder) {
+                if (img && placeholder && content.companies.image.trim() !== '') {
                     img.src = content.companies.image;
                     img.style.display = 'block';
                     placeholder.style.display = 'none';
                 }
             }
+        }
+
+        // Mobile menu toggle
+        function toggleMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu.classList.contains('show')) {
+                mobileMenu.classList.remove('show');
+            } else {
+                mobileMenu.classList.add('show');
+            }
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animate stats counters when in view
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('.stat-number');
+                    counters.forEach(counter => {
+                        counter.style.transform = 'scale(1.1)';
+                        setTimeout(() => {
+                            counter.style.transform = 'scale(1)';
+                        }, 200);
+                    });
+                }
+            });
+        }, observerOptions);
+
+        // Observe the hero section for stats animation
+        const heroSection = document.querySelector('.hero');
+        if (heroSection) {
+            observer.observe(heroSection);
+        }
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+                nav.style.backdropFilter = 'blur(10px)';
+            } else {
+                nav.style.background = 'white';
+                nav.style.backdropFilter = 'none';
+            }
+        });
+
+        // Netlify Identity
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
         }
 
         // Load content when page loads
@@ -1896,23 +1517,6 @@
         setTimeout(loadContent, 1000);
 
         console.log('Wellness Marketplace website loaded successfully!');
-        console.log('🎨 Website features Wellness-stores brand colors');
-        console.log('📝 CMS integration ready for content management');
-        console.log('🖼️ Image placeholders ready for content upload');
     </script>
-
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", user => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
-        });
-      }
-    </script>    
-
 </body>
 </html>
