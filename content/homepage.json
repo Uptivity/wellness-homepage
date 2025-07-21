@@ -3,23 +3,15 @@
     "title": "Transform Your Surplus Inventory Into Profit",
     "description": "The premier B2B marketplace for CBD, vapes, and alternative health products. Connect with verified traders, liquidate expiring stock, and maximize your wholesale revenue.",
     "stats": [
-      {
-        "number": "$50M+",
-        "label": "Lost annually to waste"
-      },
-      {
-        "number": "$15M+",
-        "label": "Potential savings Year 1"
-      },
-      {
-        "number": "60-80%",
-        "label": "Value recovery rate"
-      }
+      {"number": "$50M+", "label": "Lost annually to waste"},
+      {"number": "$15M+", "label": "Potential savings Year 1"},
+      {"number": "60-80%", "label": "Value recovery rate"}
     ]
   },
   "problem": {
     "title": "Stop Losing Money on Expiring Inventory",
     "subtitle": "Millions of dollars in CBD, vape, and wellness products are discarded annually due to approaching expiry dates. We're changing that.",
+    "image": "",
     "problems": [
       "Products approaching expiry dates become unsellable",
       "Limited channels to liquidate surplus inventory",
@@ -36,6 +28,7 @@
   "features": {
     "title": "Built for Wholesale Trading",
     "subtitle": "Professional B2B features designed specifically for the CBD, vape, and alternative health industries.",
+    "image": "",
     "features": [
       {
         "icon": "📦",
@@ -76,7 +69,7 @@
     ]
   },
   "benefits": {
-    "title": "Why Choose Wellness Marketplace?",
+    "title": "Why Choose Wellness Marketplace",
     "subtitle": "Join the most trusted B2B platform in the wellness industry, backed by proven expertise and industry leaders.",
     "benefits": [
       {
@@ -110,6 +103,7 @@
   "companies": {
     "title": "Powered by Industry Leaders",
     "subtitle": "A 50/50 joint venture combining technical expertise with deep industry knowledge and relationships.",
+    "image": "",
     "uptivity": {
       "description": "Multi-product SaaS B2B business specializing in e-commerce platforms. Already powering several vape wholesalers and traders with the JustSell platform.",
       "features": [
@@ -132,6 +126,6 @@
     "title": "Ready to Stop Wasting Money?",
     "description": "Join hundreds of wellness businesses already saving millions through smart surplus trading. Your next sale could be just one click away.",
     "button_text": "Get Started Today",
-    "button_url": "/onboarding-form/"
+    "button_url": "onboarding-form.html"
   }
 }
