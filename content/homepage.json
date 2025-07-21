@@ -19,7 +19,7 @@
   },
   "problem": {
     "title": "Stop Losing Money on Expiring Inventory",
-    "subtitle": "Millions of dollars in CBD, vape, and wellness products are discarded annually due to approaching expiry dates. We're changing that.",
+    "subtitle": "Millions of dollars in CBD, vape, and wellness products are discarded annually due to approaching expiry dates. We're changing that in 4 steps. ",
     "image": "/images/4-steps.png",
     "problems": [
       "Products approaching expiry dates become unsellable",
@@ -37,7 +37,7 @@
   "features": {
     "title": "Built for Wholesale Trading",
     "subtitle": "Professional B2B features designed specifically for the CBD, vape, and alternative health industries.",
-    "image": "",
+    "image": "/images/wellness-image-warehouse.png",
     "features": [
       {
         "icon": "📦",
@@ -112,7 +112,7 @@
   "companies": {
     "title": "Powered by Industry Leaders",
     "subtitle": "A 50/50 joint venture combining technical expertise with deep industry knowledge and relationships.",
-    "image": "/images/wellness-image-warehouse.png",
+    "image": "/images/5050.png",
     "uptivity": {
       "description": "Multi-product SaaS B2B business specializing in e-commerce platforms. Already powering several vape wholesalers and traders with the JustSell platform.",
       "features": [
