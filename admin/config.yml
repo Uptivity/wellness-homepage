@@ -1,15 +1,15 @@
 backend:
   name: git-gateway
-  branch: main # Change to master if your default branch is master
+  branch: main
 
 media_folder: "images"
 public_folder: "/images"
 
 collections:
-  - name: "pages"
-    label: "Pages"
+  - name: "content"
+    label: "Website Content"
     files:
-      - label: "Homepage"
+      - label: "Homepage Content"
         name: "homepage"
         file: "content/homepage.json"
         fields:
@@ -17,8 +17,8 @@ collections:
             name: "hero"
             widget: "object"
             fields:
-              - {label: "Main Title", name: "title", widget: "string", default: "Transform Your Surplus Inventory Into Profit"}
-              - {label: "Description", name: "description", widget: "text", default: "The premier B2B marketplace for CBD, vapes, and alternative health products."}
+              - {label: "Main Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
               - label: "Statistics"
                 name: "stats"
                 widget: "list"
@@ -30,8 +30,9 @@ collections:
             name: "problem"
             widget: "object"
             fields:
-              - {label: "Title", name: "title", widget: "string", default: "Stop Losing Money on Expiring Inventory"}
+              - {label: "Title", name: "title", widget: "string"}
               - {label: "Subtitle", name: "subtitle", widget: "text"}
+              - {label: "Section Image", name: "image", widget: "image", required: false, hint: "Upload image of expired CBD/vape products or warehouse waste statistics"}
               - label: "Problems"
                 name: "problems"
                 widget: "list"
@@ -45,8 +46,9 @@ collections:
             name: "features"
             widget: "object"
             fields:
-              - {label: "Title", name: "title", widget: "string", default: "Built for Wholesale Trading"}
+              - {label: "Title", name: "title", widget: "string"}
               - {label: "Subtitle", name: "subtitle", widget: "text"}
+              - {label: "Section Image", name: "image", widget: "image", required: false, hint: "Upload image of B2B marketplace interface or wholesale trading dashboard"}
               - label: "Features"
                 name: "features"
                 widget: "list"
@@ -54,13 +56,13 @@ collections:
                   - {label: "Icon", name: "icon", widget: "string", hint: "Emoji or icon name"}
                   - {label: "Title", name: "title", widget: "string"}
                   - {label: "Description", name: "description", widget: "text"}
-                  - {label: "Highlights", name: "highlights", widget: "string", hint: "Bullet points separated by •"}
+                  - {label: "Highlights", name: "highlights", widget: "string"}
           
           - label: "Benefits Section"
             name: "benefits"
             widget: "object"
             fields:
-              - {label: "Title", name: "title", widget: "string", default: "Why Choose Wellness Marketplace"}
+              - {label: "Title", name: "title", widget: "string"}
               - {label: "Subtitle", name: "subtitle", widget: "text"}
               - label: "Benefits"
                 name: "benefits"
@@ -79,13 +81,14 @@ collections:
               - {label: "Author Title", name: "author_title", widget: "string"}
               - {label: "Author Initials", name: "author_initials", widget: "string"}
           
-          - label: "Company Information"
+          - label: "Company Section"
             name: "companies"
             widget: "object"
             fields:
-              - {label: "Section Title", name: "title", widget: "string", default: "Powered by Industry Leaders"}
-              - {label: "Section Subtitle", name: "subtitle", widget: "text"}
-              - label: "Uptivity"
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Subtitle", name: "subtitle", widget: "text"}
+              - {label: "Section Image", name: "image", widget: "image", required: false, hint: "Upload image of partnership handshake or joint venture visualization"}
+              - label: "Uptivity Company Info"
                 name: "uptivity"
                 widget: "object"
                 fields:
@@ -94,7 +97,7 @@ collections:
                     name: "features"
                     widget: "list"
                     field: {label: "Feature", name: "feature", widget: "string"}
-              - label: "Wellness-stores"
+              - label: "Wellness-stores Company Info"
                 name: "wellness_stores"
                 widget: "object"
                 fields:
@@ -109,17 +112,7 @@ collections:
             name: "cta"
             widget: "object"
             fields:
-              - {label: "Title", name: "title", widget: "string", default: "Ready to Stop Wasting Money?"}
+              - {label: "Title", name: "title", widget: "string"}
               - {label: "Description", name: "description", widget: "text"}
-              - {label: "Button Text", name: "button_text", widget: "string", default: "Get Started Today"}
-              - {label: "Button URL", name: "button_url", widget: "string", default: "/onboarding-form/"}
-
-      - label: "Onboarding Form"
-        name: "onboarding"
-        file: "content/onboarding.json"
-        fields:
-          - {label: "Page Title", name: "title", widget: "string", default: "Join Wellness Marketplace"}
-          - {label: "Page Subtitle", name: "subtitle", widget: "text"}
-          - {label: "Form Success Message", name: "success_message", widget: "text"}
-          - {label: "Contact Email", name: "contact_email", widget: "string"}
-          - {label: "Contact Phone", name: "contact_phone", widget: "string"}
+              - {label: "Button Text", name: "button_text", widget: "string"}
+              - {label: "Button URL", name: "button_url", widget: "string"}
